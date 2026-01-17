@@ -1,23 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/src/style.css" rel="stylesheet">
-    <!--Font Inter-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
-    <!--Maniefest.json-->
-    <link rel="manifest" href="../../src/manifest.json">
-    <meta name="theme-color" content="#000000">
-    <!--favicon-->
-    <link rel="icon" type="image/png" sizes="32x32" href="../images/icons/icon.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="../images/icons/icon.png">
-    <title>Cadastro</title>
-</head>
-<body class="bg-slate-950">
-    <div class="container  flex min-h-screen items-center justify-center ">
+import '../style.css';
+
+export const register = function resgiterNow(){
+    return ` <div class="container  flex min-h-screen items-center justify-center ">
         <div class=" flex w-100 flex-col gap-8 m-4">
             <h1 class="text-4xl font-bold text-center text-white">Cadastro</h1>
             <div class="flex flex-col gap-4 justify-center">
@@ -44,5 +28,4 @@
             </div>
         </div>
     </div>
-</body>
-</html>
+`}
