@@ -12,6 +12,7 @@ import {loginEvents} from '../events/login.router.events'
 import {showpassword} from '../events/register.events'
 import {btnRegister} from '../events/register.events'
 import { openMenu } from '../events/dashbord.events;'
+import { vistLink } from '../events/vist'
 //variavel do main
 export let app = document.querySelector('.app') as HTMLElement
 
@@ -20,10 +21,9 @@ export function renderRouter(url:string, path = true){
 
     switch(url){
         case'/':
-        case'/vist':
-            app.innerHTML = vist();
-            opeCamera()
-            //loginEvents();
+        case'/login':
+            app.innerHTML = login();
+            loginEvents();
         break;
         case '/register':
             app.innerHTML = register()
@@ -40,9 +40,11 @@ export function renderRouter(url:string, path = true){
         break;
         case '/link':
             app.innerHTML = link()
+            vistLink()
         break;
          case '/vist':
             app.innerHTML = vist()
+            opeCamera()
         break;
         default:
             history.replaceState({},'', '/login')

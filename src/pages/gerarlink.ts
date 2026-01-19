@@ -19,7 +19,7 @@ export const link = function gerarLink(){
                 </div>
             </div>
             <div class="flex flex-col gap-2 ">
-                <a id="login" class=" text-white bg-blue-700 dark:bg-blue-700 rounded text-center p-2 cursor-pointer font-bold dark:text-white">Gerar Link</a>
+                <a id="gerarLink" class=" text-white bg-blue-700 dark:bg-blue-700 rounded text-center p-2 cursor-pointer font-bold dark:text-white">Gerar Link</a>
             </div>
         </div>
     </div>
