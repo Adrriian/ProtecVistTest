@@ -7,7 +7,7 @@ export const changePassword = function goChangePassword(){
             <div class="flex flex-col gap-4 justify-center">
                 <div class="flex flex-col  gap-2">
                     <label for="email" class="text-2xl text-blue-700 font-bold dark:text-white">Email</label>
-                    <input class="email p-1 text-slate-900 placeholder:text-slate-900 bg-white border-4 rounded outline-0 border-blue-700 font-bold" for="email" type="text" placeholder="Digite seu Email" required>
+                    <input id ="email" class="email p-1 text-slate-900 placeholder:text-slate-900 bg-white border-4 rounded outline-0 border-blue-700 font-bold" for="email" type="text" placeholder="Digite seu Email" required>
                 </div>
             </div>
             <div class="flex flex-col gap-2 ">

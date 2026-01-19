@@ -1,11 +1,9 @@
+// importas firabes autenticação
 import { signInWithEmailAndPassword } from "firebase/auth";
 import {auth} from "./firebase"
+
+// imports de rotas e pages
 import { renderRouter } from '../router/router'
-import {consultarPlate} from '../pages/pageConsultarplacas'
-
-import {app} from '../router/router'
-
-
 
 export function openPassword(){
     let inputPassword = document.querySelector('#senha') as HTMLInputElement
@@ -51,10 +49,8 @@ export async function btnLogin(){
     }
 
     try{
-        await signInWithEmailAndPassword(auth, emailValue,passwordValue)
-        renderRouter('/plate');{
-            app.innerHTML = consultarPlate()
-        }
+        await signInWithEmailAndPassword(auth, emailValue,passwordValue);
+        renderRouter('/dashBord')
     }catch(error:any){
     switch (error.code) {
         case 'auth/user-not-found':

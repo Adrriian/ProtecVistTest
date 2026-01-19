@@ -6,12 +6,16 @@ export const register = function resgiterNow(){
             <h1 class="text-4xl font-bold text-center text-blue-700 dark:text-white">Faça seu Cadastro</h1>
             <div class="flex flex-col gap-4 justify-center">
                 <div class="flex flex-col  gap-2">
+                    <label for="name" class="text-xl font-bold text-blue-700 dark:text-white">Email:</label>
+                    <input class=" p-1 text-slate-900 placeholder:text-slate-900 bg-white border-4 rounded outline-0 border-blue-700 font-bold" id="name" type="text" placeholder="Digite seu nome" required>
+                </div>
+                <div class="flex flex-col  gap-2">
                     <label for="email" class="text-xl font-bold text-blue-700 dark:text-white">Email:</label>
                     <input class=" p-1 text-slate-900 placeholder:text-slate-900 bg-white border-4 rounded outline-0 border-blue-700 font-bold" id="email" type="text" placeholder="Digite seu Email" required>
                 </div>
                  <div class="flex flex-col   gap-2 " >
-                    <label for="tel" class="text-xl font-bold text-blue-700 dark:text-white">Telefone:</label>
-                    <input id="telefone" class=" p-1 text-slate-900 placeholder:text-slate-900 bg-white rounded border-4 outline-0 border-blue-700  font-bold" id="tel" type="text" placeholder="Digite seu Telefone" required>
+                    <label for="telefone" class="text-xl font-bold text-blue-700 dark:text-white">Telefone:</label>
+                    <input id="telefone" class=" p-1 text-slate-900 placeholder:text-slate-900 bg-white rounded border-4 outline-0 border-blue-700  font-bold appearance-none" id="tel" type="number" placeholder="Digite seu Telefone" required>
                 </div>
                 <div class="flex flex-col   gap-2 " >
                     <label for="password" class="text-xl font-bold text-blue-700 dark:text-white">Senha:</label>

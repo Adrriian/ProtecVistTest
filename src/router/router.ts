@@ -2,13 +2,14 @@ import '../style.css'
 import {login} from '../pages/pageLogin'
 import {register} from '../pages/pageRegister'
 import {changePassword} from '../pages/pageChangePassword'
-import {consultarPlate} from '../pages/pageConsultarplacas'
+import {dashBord} from '../pages/dashBord'
+import { link } from '../pages/gerarlink'
 // funções do events
 import {changePasswordEvents} from '../events/changePassword.events'
 import {loginEvents} from '../events/login.router.events'
 import {showpassword} from '../events/register.events'
 import {btnRegister} from '../events/register.events'
-
+import { openMenu } from '../events/dashbord.events;'
 //variavel do main
 export let app = document.querySelector('.app') as HTMLElement
 
@@ -17,7 +18,7 @@ export function renderRouter(url:string, path = true){
 
     switch(url){
         case'/':
-        case'/plate':
+        case'/login':
             app.innerHTML = login();
             loginEvents();
         break;
@@ -30,8 +31,12 @@ export function renderRouter(url:string, path = true){
             app.innerHTML = changePassword()
             changePasswordEvents()
         break;
-        case '/plate':
-            app.innerHTML = consultarPlate()
+        case '/dashBord':
+            app.innerHTML = dashBord()
+            openMenu()
+        break;
+        case '/link':
+            app.innerHTML = link()
         break;
         default:
             history.replaceState({},'', '/login')

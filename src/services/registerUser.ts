@@ -1,25 +1,41 @@
 // imports para criação de usuário
-import { createUserWithEmailAndPassword } from "firebase/auth"
+import { createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth"
 import {auth} from '../services/firebase'
 
 //imports para banco de dados
-import { collection, getDocs } from "firebase/firestore";
+import { setDoc,doc  } from "firebase/firestore";
 import { db } from "../services/firebase";
+
+//imports de routas
+import {renderRouter} from'../router/router'
+
+
+function validarSenha(senha: string) {
+  const regex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{7,}$/;
+  return regex.test(senha);
+}
 
 // funções de mostrar senha
 export async function registerUser(){
+    
+
+    let name = document.querySelector('#name') as HTMLInputElement;
     let email = document.querySelector('#email') as HTMLInputElement;
     let telefone = document.querySelector('#telefone') as HTMLInputElement;
     let password = document.querySelector('#password') as HTMLInputElement;
     let confimPassword = document.querySelector('#confirmPassword') as HTMLInputElement;
 
+    const nameValue:string = name.value
     const emailValue:string = email.value;
     const telefoneValue:string = telefone.value;
     const passwordValue:string = password.value;
     const confirmPasswordValue:string = confimPassword.value;
 
-    if(!emailValue && !telefoneValue && !passwordValue && !confirmPasswordValue){
+    if(!nameValue && !emailValue && !telefoneValue && !passwordValue && !confirmPasswordValue){
         alert('Inicie seu cadastro')
+        return
+    }else if(!nameValue){
+        alert('Digite seu nome')
         return
     }else if(!email.value){
         alert('Digite um Email')
@@ -36,11 +52,25 @@ export async function registerUser(){
     }else if(password.value !== confimPassword.value){
         alert('As Senhas não são iguais')
         return
+    }else if (!validarSenha(passwordValue && confirmPasswordValue)) {
+    alert("Senha deve ter ao menos 6 caracteres, 1 maiúscula, 1 número e 1 símbolo.");
+    return; // não cria usuário
     }
 
     try{
-        createUserWithEmailAndPassword(auth, emailValue, passwordValue)
-        alert('usuario cadastrado')
+     
+        const cred = await createUserWithEmailAndPassword(auth, emailValue, passwordValue)
+        cred.user.uid
+        await setDoc(doc(db, "consultores", cred.user.uid),{
+            name: nameValue,
+            email: emailValue,
+            Userid:  cred.user.uid,
+            adm: false,
+            telefone:telefoneValue
+        })
+        await sendEmailVerification(cred.user);
+        alert('usuario cadastrado. Foi enviado um email de confirmação ')
+        renderRouter('/login')
     }
     catch(error){}
 }
