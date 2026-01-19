@@ -1,5 +1,10 @@
+// imports para criação de usuário
 import { createUserWithEmailAndPassword } from "firebase/auth"
 import {auth} from '../services/firebase'
+
+//imports para banco de dados
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../services/firebase";
 
 // funções de mostrar senha
 export async function registerUser(){
@@ -12,8 +17,6 @@ export async function registerUser(){
     const telefoneValue:string = telefone.value;
     const passwordValue:string = password.value;
     const confirmPasswordValue:string = confimPassword.value;
-
-
 
     if(!emailValue && !telefoneValue && !passwordValue && !confirmPasswordValue){
         alert('Inicie seu cadastro')
