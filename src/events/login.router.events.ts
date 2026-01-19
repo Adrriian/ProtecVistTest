@@ -1,13 +1,15 @@
-import { navigate } from '../router/router'
+import { renderRouter } from '../router/router'
+
 
 export function loginEvents() {
   document.querySelector('#gochangePassword')
     ?.addEventListener('click', () => {
-      navigate('/chagepassword')
+      renderRouter('/changePassowrd')
     })
 
   document.querySelector('#goRegister')
     ?.addEventListener('click', () => {
-      navigate('/register')
+      renderRouter('/register')
     })
+ 
 }

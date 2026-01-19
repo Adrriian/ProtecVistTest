@@ -2,7 +2,7 @@ import { sendPasswordResetEmail } from "firebase/auth";
 import {auth} from "./firebase"
 
 export async function btnChangePassword(){
-    console.log('alo')
+
     let email = document.querySelector('.email') as HTMLInputElement
     const resetEmail:string = email.value
 
