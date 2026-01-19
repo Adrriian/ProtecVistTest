@@ -3,10 +3,10 @@ import '../style.css'
 export const changePassword = function goChangePassword(){
     return` <div class="container flex min-h-screen items-center justify-center ">
         <div class="w-80% flex flex-col  gap-8 m-4">
-            <h1 class="text-4xl font-bold text-center text-white">Redefinir Senha</h1>
+            <h1 class="text-4xl font-bold text-center text-blue-700 dark:text-white">Redefinir Senha</h1>
             <div class="flex flex-col gap-4 justify-center">
                 <div class="flex flex-col  gap-2">
-                    <label for="email" class="text-2xl font-bold text-white">Email</label>
+                    <label for="email" class="text-2xl text-blue-700 font-bold dark:text-white">Email</label>
                     <input class="email p-1 text-slate-900 placeholder:text-slate-900 bg-white border-4 rounded outline-0 border-blue-700 font-bold" for="email" type="text" placeholder="Digite seu Email" required>
                 </div>
             </div>
