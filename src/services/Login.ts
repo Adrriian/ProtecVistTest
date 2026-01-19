@@ -23,7 +23,6 @@ export async function btnLogin(){
 
     try{
         await signInWithEmailAndPassword(auth, emailValue,passwordValue)
-        alert('usuario cadastrado');
         renderRouter('/plate');{
             app.innerHTML = consultarPlate()
         }
