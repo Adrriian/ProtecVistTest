@@ -1,5 +1,5 @@
 import { renderRouter } from '../router/router'
-
+import {btnLogin } from '../services/Login'
 
 export function loginEvents() {
   document.querySelector('#gochangePassword')
@@ -11,5 +11,8 @@ export function loginEvents() {
     ?.addEventListener('click', () => {
       renderRouter('/register')
     })
- 
+  document.querySelector('#login')
+  ?.addEventListener('click',()=>{
+    btnLogin()
+  } )
 }

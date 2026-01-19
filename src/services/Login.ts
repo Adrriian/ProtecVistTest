@@ -3,6 +3,7 @@ import {auth} from "./firebase"
 import { renderRouter } from '../router/router'
 import {consultarPlate} from '../pages/pageConsultarplacas'
 import {app} from '../router/router'
+
 export async function btnLogin(){
     let email = document.querySelector('#email') as HTMLInputElement
     let password = document.querySelector('#senha') as HTMLInputElement

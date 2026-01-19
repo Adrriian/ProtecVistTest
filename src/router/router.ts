@@ -6,7 +6,7 @@ import {consultarPlate} from '../pages/pageConsultarplacas'
 // funções do events
 import {changePasswordEvents} from '../events/changePassword.events'
 import {loginEvents} from '../events/login.router.events'
-import {go} from '../events/login.events.go'
+
 export let app = document.querySelector('.app') as HTMLElement
 
 export function renderRouter(url:string, path = true){
@@ -17,7 +17,6 @@ export function renderRouter(url:string, path = true){
         case'/plate':
             app.innerHTML = login();
             loginEvents();
-            go()
         break;
         case '/register':
             app.innerHTML = register()
