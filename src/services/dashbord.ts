@@ -14,3 +14,28 @@ export function menu(){
 export function goGerarLink(){
     renderRouter('/link')
 }
+export function changeColor(){
+    let select = document.querySelector('#select') as HTMLSelectElement
+    let selectvalue = select.value
+    
+    switch(selectvalue){
+        case 'pendente':
+            select.style.background = "yellow"
+            select.style.color = 'blue'
+        break;
+        case 'feito':
+            select.style.background = "green"
+            select.style.color = 'white'
+        break;
+        
+        case 'cancelado':
+            select.style.background = "red"
+            select.style.color = 'white'
+        break;
+        default:
+            select.style.background = "white"
+            select.style.color = 'blue'
+        break;
+    }    
+
+}

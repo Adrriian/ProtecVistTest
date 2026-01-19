@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Minha Extensão TS",
+  "version": "1.0.0",
+  "description": "Uma extensão usando TypeScript",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icons/icon.png",
+      "48": "images/icons/icon.png",
+      "128": "images/icons/icon.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "16": "images/icons/icon.png",
+    "48": "images/icons/icon.png",
+    "128": "images/icons/icon.png"
+  },
+  "permissions": ["storage", "tabs", "activeTab"]
+}

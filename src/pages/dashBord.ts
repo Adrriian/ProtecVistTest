@@ -42,10 +42,11 @@ export const dashBord = function plate(){
                                         <td class="col-start-1 text-sm dark:text-blue-700 font-bold sm:col-auto">47991076484</td>
                                         <td class="col-start-1 text-sm dark:text-blue-700 font-bold sm:col-auto">MLR5B18</td>
                                         <td class="col-start-2 text-sm dark:text-blue-700 font-bold row-start-2 sm:row-auto sm:col-auto">
-                                            <select class="text-sm border-2 rounded outline-0 font-bold dark:border-blue-700 dark:text-blue-700">
-                                                <option class="text-blue-700 font-bold text-sm">Pendente</option>
-                                                <option class="text-blue-700 font-bold text-sm">Feito</option>
-                                                <option class="text-blue-700 font-bold text-sm">Cancelado</option>
+                                            <select id="select" class="500  text-sm border-2 rounded outline-0 font-bold dark:border-blue-700 dark:text-blue-700">
+                                                 <option value='selecione' class="bg-white text-blue-700  font-bold text-sm">Selecione</option>
+                                                <option value='pendente' class="text-white bg-yellow-500  font-bold text-sm">Pendente</option>
+                                                <option  value='feito' class="text-white  bg-green-600 font-bold text-sm">Feito</option>
+                                                <option value='cancelado' class="text-white  bg-red-700 font-bold text-sm">Cancelado</option>
                                             </select>
                                         </td>
                                     </tr>
