@@ -1,6 +1,6 @@
 import '../style.css';
 
-export const login = function loginShow(){
+export const link = function gerarLink(){
     return `<div class="container flex min-h-screen items-center justify-center ">
         <div class="w-80% flex flex-col  gap-8 m-4">
             <h1 class="text-4xl font-bold text-center text-blue-700 dark:text-white">ProtecVist</h1>
