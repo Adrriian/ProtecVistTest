@@ -3,7 +3,7 @@ import '../style.css';
 export const link = function gerarLink(){
     return `<div class="container flex min-h-screen items-center justify-center ">
         <div class="w-80% flex flex-col  gap-8 m-4">
-            <h1 class="text-4xl font-bold text-center text-blue-700 dark:text-white">ProtecVist</h1>
+            <h1 class="text-4xl font-bold text-center text-blue-700 dark:text-white">Gerar Link de Vistoria</h1>
             <div class="flex flex-col gap-4 justify-center">
                 <div class="flex flex-col  gap-2">
                     <label for="name" class="text-2xl text-blue-700 font-bold dark:text-white">Nome</label>
