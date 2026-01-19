@@ -4,6 +4,8 @@ import {register} from '../pages/pageRegister'
 import {changePassword} from '../pages/pageChangePassword'
 import {dashBord} from '../pages/dashBord'
 import { link } from '../pages/gerarlink'
+import { vist } from '../pages/vistoria'
+import { opeCamera } from '../services/vist'
 // funções do events
 import {changePasswordEvents} from '../events/changePassword.events'
 import {loginEvents} from '../events/login.router.events'
@@ -18,9 +20,10 @@ export function renderRouter(url:string, path = true){
 
     switch(url){
         case'/':
-        case'/login':
-            app.innerHTML = login();
-            loginEvents();
+        case'/vist':
+            app.innerHTML = vist();
+            opeCamera()
+            //loginEvents();
         break;
         case '/register':
             app.innerHTML = register()
@@ -37,6 +40,9 @@ export function renderRouter(url:string, path = true){
         break;
         case '/link':
             app.innerHTML = link()
+        break;
+         case '/vist':
+            app.innerHTML = vist()
         break;
         default:
             history.replaceState({},'', '/login')
