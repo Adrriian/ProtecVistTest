@@ -1,5 +1,6 @@
 import { renderRouter } from '../router/router'
 import {btnLogin } from '../services/Login'
+import {openPassword} from '../services/Login'
 
 export function loginEvents() {
   document.querySelector('#gochangePassword')
@@ -14,5 +15,9 @@ export function loginEvents() {
   document.querySelector('#login')
   ?.addEventListener('click',()=>{
     btnLogin()
+  } )
+   document.querySelector('#openClose')
+  ?.addEventListener('click',()=>{
+    openPassword()
   } )
 }
