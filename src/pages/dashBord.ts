@@ -5,7 +5,7 @@ export const dashBord = function plate(){
     <div class="container flex dark:bg-slate-950">
             <div id="menuArea" class="w-10 h-screen overflow-hidden gap-10 p-2 dark:bg-slate-800 z-2 transition-all duration-500 ease-linear  fixed ">
                 <div id="menu" class="cursor-pointer">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-10 stroke-blue-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8 stroke-blue-700">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                     </svg>
                 </div>
