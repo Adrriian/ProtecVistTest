@@ -9,9 +9,9 @@ export const dashBord = function plate(){
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                     </svg>
                 </div>
-                <h1 id="link" class="text-xl dark:text-blue-700 font-bold ml-10 cursor-pointer">Gerar Link Vistoria<h1>
+                <h1 id="link" class="text-sm dark:text-blue-700 font-bold ml-15 cursor-pointer">Gerar Link Vistoria<h1>
             </div>
-            <div class="w-full h-screen dark:bg-slate-950 z-1 ml-10">
+            <div class="w-full h-screen dark:bg-slate-950 z-1 ml-15">
                 <div class="p-5 flex flex-col gap-10">
                     <h1 class="font-bold text-2xl dark:text-white ">Olá Adrian</h1>
                     <div class="flex flex-col dark:bg-white rounded p-3 gap-10 ">
