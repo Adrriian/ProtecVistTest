@@ -17,7 +17,7 @@ function validarSenha(senha: string) {
 
 // funções de mostrar senha
 export async function registerUser(){
-    
+    const date:Date = new Date();
 
     let name = document.querySelector('#name') as HTMLInputElement;
     let email = document.querySelector('#email') as HTMLInputElement;
@@ -37,19 +37,19 @@ export async function registerUser(){
     }else if(!nameValue){
         alert('Digite seu nome')
         return
-    }else if(!email.value){
+    }else if(!emailValue){
         alert('Digite um Email')
         return
-    }else if(!telefone.value){
+    }else if(!telefoneValue){
         alert('Digite seu Telefone')
         return
-    }else if(!password.value){
+    }else if(!passwordValue){
         alert('Digite sua Senha')
         return
-    }else if(!confimPassword.value){
+    }else if(!confirmPasswordValue){
         alert('Confirme sua Senha')
         return
-    }else if(password.value !== confimPassword.value){
+    }else if(passwordValue !== confirmPasswordValue){
         alert('As Senhas não são iguais')
         return
     }else if (!validarSenha(passwordValue && confirmPasswordValue)) {
@@ -58,21 +58,40 @@ export async function registerUser(){
     }
 
     try{
-     
+        /*uid: string
+        ├── nome: string
+        ├── telefone: string
+        ├── email: string
+        ├── role: "admin" | "consultor"
+        ├── aprovado: boolean
+        ├── ativo: boolean
+        ├── criadoEm: timestamp
+        ├── aprovadoEm: timestamp | null
+        ├── aprovadoPor: string | null*/
+
         const cred = await createUserWithEmailAndPassword(auth, emailValue, passwordValue)
         cred.user.uid
         await setDoc(doc(db, "consultores", cred.user.uid),{
-            name: nameValue,
-            email: emailValue,
             Userid:  cred.user.uid,
-            adm: false,
-            telefone:telefoneValue
+            name: nameValue,
+            telefone: telefoneValue,
+            email: emailValue,
+            role: "consultor",
+            aprovado: false,
+            ativo: false,
+            criadoEm: date,
+            aprovadoEm: '',
+            aprovadoPor: '',
+            
         })
         await sendEmailVerification(cred.user);
         alert('usuario cadastrado. Foi enviado um email de confirmação ')
         renderRouter('/login')
     }
-    catch(error){}
+    catch(error:any){
+        console.error("Erro no cadastro:", error.code, error.message)
+        alert("Erro ao finalizar cadastro")
+    }
 }
 
 export function openPassword(path:Element){
