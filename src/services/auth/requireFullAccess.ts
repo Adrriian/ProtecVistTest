@@ -14,8 +14,8 @@ export function checkRender(callback: ()=>void){
         }
 
         if(!user.emailVerified){
-            alert('Necessario confirmar o seu email')
-             renderRouter("/checkEmail", true)
+            alert('Necessario confirmar o seu email (O email de verificação pode estar no seu spam)')
+             renderRouter("/login", true)
             return
         }
 
