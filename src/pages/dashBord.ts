@@ -2,71 +2,93 @@ import '../style.css';
 
 export const dashBord = function plate(){
     return `
-    <div class="container flex dark:bg-slate-950">
-            <div id="menuArea" class="w-15 h-screen overflow-hidden gap-10 p-2 dark:bg-slate-800 z-2 transition-all duration-500 ease-linear  fixed ">
-                <div id="menu" class="cursor-pointer">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-10 stroke-blue-700">
+    <div class="container m-auto">
+        <div class="min-h-full bg-slate-800 z-99 absolute p-5 hidden">
+            <div class="flex items-center border-b border-gray-400 pb-4 gap-5">
+                <div class="flex items-center bg-blue-700 p-2 rounded ">    
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 stroke-white">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 0 0-10.026 0 1.106 1.106 0 0 0-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
+                    </svg>   
+                </div>
+                <div>
+                        <h1 class="font-bold text-white text-xl">ProtecVist </h1>
+                    <h1 class="text-white text-sm">Sistema De Vistorias</h1>
+                </div>
+            </div>
+            <div class="mt-5 ">
+                <div class="bg-blue-700 p-2 rounded flex gap-2 cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 stroke-white">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z" />
+                    </svg>
+                    <h1 class="cursor-pointer font-bold text-white">Cadastrar Cliente<h1>
+                </div>
+            </div>
+        </div>
+        <div class=" p-5 z-0">
+            <div class="p-5 flex flex-col gap-5 sm:grid sm:grid-cols-2  border-b-2  dark:border-white m-5">
+                <div class="flex gap-5 items-center  ">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 cursor-pointer dark:stroke-white">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                     </svg>
-                </div>
-                <h1 id="link" class="text-sm dark:text-blue-700 font-bold ml-15 cursor-pointer">Gerar Link Vistoria<h1>
-            </div>
-            <div class="w-full h-screen dark:bg-slate-950 z-1 ml-15">
-                <div class="p-5 flex flex-col gap-10">
-                    <h1 class="font-bold text-2xl dark:text-white ">Olá Adrian</h1>
-                    <div class="flex flex-col dark:bg-white rounded p-3 gap-10 ">
-                        <div class="flex gap-2 flex-col sm:flex-row sm:items-center sm:gap-5">
-                            <h1 class="font-bold text-2xl dark:text-slate-950">DashBord</h1>
-                            <div class="flex  items-center gap-2 flex-row sm:items-center sm:gap-2">
-                                <input id="senha" class="z-1 p-1 w-40 border-blue-700 text-slate-700 placeholder:text-slate-700 placeholder:text-sm dark:text-slate-900 dark:placeholder:text-slate-900 dark:bg-white rounded border-2 outline-0 dark:border-blue-700  font-bold" type="text" placeholder="Digite a Placa" >
-                                <div class="dark:bg-slate-950 rounded p-1 cursor-pointer">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 dark:stroke-blue-700">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="h-100 overflow-y-scroll   flex flex-col">
-                            <table class="flex flex-col gap-4">
-                                <thead>
-                                    <tr class="grid grid-cols-2 text-left border-b-1 border-gray-500 sm:grid-cols-4">
-                                        <th class="text-sm">Nome</th>
-                                        <th class="hidden sm:flex">Telefone</th>
-                                        <th class="hidden sm:flex">Placa</th>
-                                        <th  class="text-sm">Status</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="flex flex-col gap-5">
-                                    <tr class="grid grid-cols-2 gap-1 border-b-1 border-gray-500 sm:grid-cols-4 sm:p-2 " >
-                                        <td class="col-start-1 text-sm dark:text-blue-700 font-bold sm:col-auto">Adrian Raul Ribeiro</td>
-                                        <td class="col-start-1 text-sm dark:text-blue-700 font-bold sm:col-auto">47991076484</td>
-                                        <td class="col-start-1 text-sm dark:text-blue-700 font-bold sm:col-auto">MLR5B18</td>
-                                        <td class="col-start-2 text-sm dark:text-blue-700 font-bold row-start-2 sm:row-auto sm:col-auto">
-                                            <select id="select" class="500  text-sm border-2 rounded outline-0 font-bold dark:border-blue-700 dark:text-blue-700">
-                                                 <option value='selecione' class="bg-white text-blue-700  font-bold text-sm">Selecione</option>
-                                                <option value='pendente' class="text-white bg-yellow-500  font-bold text-sm">Pendente</option>
-                                                <option  value='feito' class="text-white  bg-green-600 font-bold text-sm">Feito</option>
-                                                <option value='cancelado' class="text-white  bg-red-700 font-bold text-sm">Cancelado</option>
-                                            </select>
-                                        </td>
-                                    </tr>
-                                    <tr class="grid grid-cols-2 gap-1 border-b-1 border-gray-500 sm:grid-cols-4 sm:p-2 " >
-                                        <td class="col-start-1 text-sm dark:text-blue-700 font-bold sm:col-auto">Maicon</td>
-                                        <td class="col-start-1 text-sm dark:text-blue-700 font-bold sm:col-auto">47991268791</td>
-                                        <td class="col-start-1 text-sm dark:text-blue-700 font-bold sm:col-auto">MCL8B19</td>
-                                        <td class="col-start-2 text-sm dark:text-blue-700 font-bold row-start-2 sm:row-auto sm:col-auto">
-                                            <select class="text-sm border-2 rounded outline-0 font-bold dark:border-blue-700 dark:text-blue-700">
-                                                <option class="text-blue-700 font-bold text-sm">Pendente</option>
-                                                <option class="text-blue-700 font-bold text-sm">Feito</option>
-                                                <option class="text-blue-700 font-bold text-sm">Cancelado</option>
-                                            </select>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div
+                    <div>
+                        <h1 class="text-slate-800 text-2xl font-bold dark:text-white">DashBord</h1>
+                        <h1 class="text-blue-700">Olá, Adrian Ribeiro</h1>
                     </div>
                 </div>
+                <div>
+                    <input class="border-2 border-blue-700 text-blue-700 outline-0 bg-blue-50 font-bold placeholder-bold placeholder-blue-700 rounded p-1 dark:bg-white sm:w-full lg:w-100" type="text"placeholder="Buscar Cliente">
+                </div>
+            </div>
+            <div class="flex items-center bg-blue-900 rounded w-full p-5 gap-5 mb-5">
+                <div class="flex flex-col gap-10 sm:grid sm:grid-cols-2 md:grid-cols-4 md:justify-center md:items-center md:m-auto">
+                    <div class="flex gap-5 items-center border-b border-white pb-5 sm:border-b-0 sm:border-r   sm:items-start sm:pb-0 sm:pr-5 md:flex-col lg:flex-row">
+                        <div class="flex  bg-blue-500/80 rounded p-2 justify-center items-center w-10 h-10 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 stroke-white">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
+                            </svg>
+                        </div>
+                        <div class=""md:flex md:gap-2 md:flex-col">
+                            <h1 class="text-white text-sm lg:text-xl">Total de Clientes</h1>
+                            <h1 class="text-white font-bold text-xl lg:text-2xl">10</h1>
+                        </div>
+                    </div>
+                    <div class="flex gap-5 items-center border-b border-white pb-5 sm:border-b-0  sm:items-start sm:pb-0 sm:pr-5 md:flex-col md:border-r lg:flex-row" >
+                        <div class="flex bg-green-600/80 rounded p-2 justify-center items-center w-10 h-10 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 stroke-white">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
+                            </svg>
+                        </div>
+                        <div class=""md:flex md:gap-2 md:flex-col">
+                            <h1 class="text-white text-sm  lg:text-xl">Clientes Feito</h1>
+                            <h1 class="text-white font-bold text-xl lg:text-2xl">5</h1>
+                        </div>
+                    </div>
+                    <div class="flex gap-5 items-center border-b border-white pb-5 sm:border-b-0 sm:border-r  sm:items-start sm:pb-0 sm:pr-5 md:flex-col lg:flex-row" >
+                        <div class="flex bg-yellow-400/80 rounded p-2 justify-center items-center w-10 h-10 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 stroke-white">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
+                            </svg>
+                        </div>
+                        <div class=""md:flex md:gap-2 md:flex-col">
+                            <h1 class="text-white  lg:text-xl">Clientes Pendentes</h1>
+                            <h1 class="text-white font-bold text-xl lg:text-2xl">10</h1>
+                        </div>
+                    </div>
+                    <div class="flex gap-5 items-center  sm:items-start md:flex-col lg:flex-row">
+                        <div class="flex bg-red-700/80 rounded p-2 justify-center items-center w-10 h-10 sm:flex-col  ">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 stroke-white">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
+                            </svg>
+                        </div>
+                        <div class="md:flex md:gap-2 md:flex-col">
+                            <h1 class="text-white text-sm  lg:text-xl">Clientes Cancelado</h1>
+                            <h1 class="text-white font-bold text-xl lg:text-2xl">3</h1>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+            <div>
+                    <h1 class="text-white">Lista de Contatos</h1>
             </div>
     </div>
 `
