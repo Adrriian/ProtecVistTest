@@ -40,8 +40,8 @@ export const dashBord = function plate(){
                 </div>
             </div>
             <div class="flex items-center bg-blue-900 rounded w-full p-5 gap-5 mb-5 ">
-                <div class="flex flex-col gap-10 sm:grid sm:grid-cols-2 md:grid-cols-4 md:justify-center md:items-center md:m-auto ">
-                    <div class="flex gap-5 items-center border-b border-white pb-5 sm:border-b-0 sm:border-r   sm:items-start sm:pb-0 sm:pr-5 md:flex-col lg:flex-row">
+                <div class="flex flex-col m-auto  gap-10 sm:grid sm:grid-cols-2 md:grid-cols-4 md:justify-center md:items-center md:m-auto lg:grid-cols-2 ">
+                    <div class="flex gap-5 items-center  border-b  border-white pb-5 sm:border-b-0 sm:border-r   sm:items-start sm:pb-0 sm:pr-5 md:flex-col lg:flex-row">
                         <div class="flex  bg-slate-900/80 rounded p-2 justify-center items-center w-10 h-10 ">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 stroke-white">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
