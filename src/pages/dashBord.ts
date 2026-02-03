@@ -39,7 +39,7 @@ export const dashBord = function plate(){
                     </div>
                     <div>
                         <h1 class="text-slate-800 text-3xl font-bold dark:text-white">DashBord</h1>
-                        <h1 class="text-red-700 text-lg">Olá, Adrian Ribeiro</h1>
+                        <h1 class="text-yellow-700 text-lg">Olá, Adrian Ribeiro</h1>
                     </div>
                 </div>
                 <div>
