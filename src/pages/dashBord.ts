@@ -88,7 +88,7 @@ export const dashBord = function plate(){
                 </div>
             </div>
             <div>
-                    <h1 class="text-white">Lista de Contatos</h1>
+                    <h1 class="text-white font-bold text-2xl">Lista de Clientes:</h1>
                     <div class="flex flex-col gap-5 mt-5 sm:grid sm:grid-cols-2 md:grid-cols-3 ">
                         <div class="flex flex-col bg-white rounded-xl p-3 cursor-pointer gap-2">   
                             <div class="flex items-center gap-3">
