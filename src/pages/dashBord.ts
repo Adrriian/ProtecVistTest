@@ -16,11 +16,11 @@ export const dashBord = function plate(){
                 </div>
             </div>
             <div class="mt-5 ">
-                <div class="bg-blue-700 p-2 rounded flex gap-2 cursor-pointer">
+                <div class="bg-blue-700 p-2 rounded flex gap-2 cursor-pointer transition-all duration-300 hover:shadow-[0_0_20px_blue]">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 stroke-white">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z" />
                     </svg>
-                    <h1 class="cursor-pointer font-bold text-white">Cadastrar Cliente<h1>
+                    <h1 class="cursor-pointer font-bold text-white ">Cadastrar Cliente<h1>
                 </div>
             </div>
         </div>
@@ -90,7 +90,7 @@ export const dashBord = function plate(){
             <div>
                     <h1 class="text-white font-bold text-2xl">Lista de Clientes:</h1>
                     <div class="flex flex-col gap-5 mt-5 sm:grid sm:grid-cols-2 md:grid-cols-3 ">
-                        <div class="flex flex-col bg-white rounded-xl p-3 cursor-pointer gap-2">   
+                        <div class="flex flex-col bg-white rounded-xl p-3 cursor-pointer gap-2 transition-all duration-300 hover:shadow-[0_0_20px_blue]">   
                             <div class="flex items-center gap-3">
                                 <div>
                                     <img src="../../public/images/icons/icon.png" class="w-8 h-8 rounded-sm">
