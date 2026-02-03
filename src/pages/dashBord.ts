@@ -2,8 +2,8 @@ import '../style.css';
 
 export const dashBord = function plate(){
     return `
-    <div class="container m-auto">
-        <div class="min-h-full bg-slate-800 z-99 absolute p-5 hidden">
+    <div class="container m-auto lg:flex lg:min-h-full">
+        <div class="min-h-full bg-slate-800 z-99 absolute p-5 hidden lg:flex lg:flex-col lg:static lg:w-85 lg:min-h-screen">
             <div class="flex items-center border-b border-gray-400 pb-4 gap-5">
                 <div class="flex items-center bg-blue-700 p-2 rounded ">    
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 stroke-white">
@@ -11,7 +11,7 @@ export const dashBord = function plate(){
                     </svg>   
                 </div>
                 <div>
-                        <h1 class="font-bold text-white text-xl">ProtecVist </h1>
+                        <h1 class="font-bold text-white text-xl ">ProtecVist </h1>
                     <h1 class="text-white text-sm">Sistema De Vistorias</h1>
                 </div>
             </div>
@@ -24,10 +24,10 @@ export const dashBord = function plate(){
                 </div>
             </div>
         </div>
-        <div class=" p-5 z-0">
+        <div class=" p-5 z-0 md:z-0 lg:z-1 ">
             <div class="p-5 flex flex-col gap-5 sm:grid sm:grid-cols-2  border-b-2  dark:border-white m-5">
                 <div class="flex gap-5 items-center  ">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 cursor-pointer dark:stroke-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 cursor-pointer dark:stroke-white lg:hidden">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                     </svg>
                     <div>
@@ -39,10 +39,10 @@ export const dashBord = function plate(){
                     <input class="border-2 border-blue-700 text-blue-700 outline-0 bg-blue-50 font-bold placeholder-bold placeholder-blue-700 rounded p-1 dark:bg-white sm:w-full lg:w-100" type="text"placeholder="Buscar Cliente">
                 </div>
             </div>
-            <div class="flex items-center bg-blue-900 rounded w-full p-5 gap-5 mb-5">
-                <div class="flex flex-col gap-10 sm:grid sm:grid-cols-2 md:grid-cols-4 md:justify-center md:items-center md:m-auto">
+            <div class="flex items-center bg-blue-900 rounded w-full p-5 gap-5 mb-5 ">
+                <div class="flex flex-col gap-10 sm:grid sm:grid-cols-2 md:grid-cols-4 md:justify-center md:items-center md:m-auto ">
                     <div class="flex gap-5 items-center border-b border-white pb-5 sm:border-b-0 sm:border-r   sm:items-start sm:pb-0 sm:pr-5 md:flex-col lg:flex-row">
-                        <div class="flex  bg-blue-500/80 rounded p-2 justify-center items-center w-10 h-10 ">
+                        <div class="flex  bg-slate-900/80 rounded p-2 justify-center items-center w-10 h-10 ">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 stroke-white">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
                             </svg>
@@ -52,7 +52,7 @@ export const dashBord = function plate(){
                             <h1 class="text-white font-bold text-xl lg:text-2xl">10</h1>
                         </div>
                     </div>
-                    <div class="flex gap-5 items-center border-b border-white pb-5 sm:border-b-0  sm:items-start sm:pb-0 sm:pr-5 md:flex-col md:border-r lg:flex-row" >
+                    <div class="flex gap-5 items-center border-b border-white pb-5 sm:border-b-0  sm:items-start sm:pb-0 sm:pr-5 md:flex-col md:border-r lg:flex-row lg:border-0" >
                         <div class="flex bg-green-600/80 rounded p-2 justify-center items-center w-10 h-10 ">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 stroke-white">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
@@ -85,10 +85,172 @@ export const dashBord = function plate(){
                             <h1 class="text-white font-bold text-xl lg:text-2xl">3</h1>
                         </div>
                     </div>
-                 </div>
+                </div>
             </div>
             <div>
                     <h1 class="text-white">Lista de Contatos</h1>
+                    <div class="flex flex-col gap-5 mt-5 sm:grid sm:grid-cols-2 md:grid-cols-3 ">
+                        <div class="flex flex-col bg-white rounded-xl p-3 cursor-pointer gap-2">   
+                            <div class="flex items-center gap-3">
+                                <div>
+                                    <img src="../../public/images/icons/icon.png" class="w-8 h-8 rounded-sm">
+                                </div>
+                                <h1 class="text-blue-700 font-bold">Adrian Raul Ribeiro</h1>
+                            </div>
+                            <div class="flex gap-3 mt-3 items-center">
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 stroke-sky-900">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+                                    </svg>
+                                </div>
+                                <h1 class="text-sm text-sky-900 font-bold">47991076484<h1>
+                                <h1 class="text-sm text-sky-900 font-bold">MLB5B18<h1>
+                            </div>
+                            <div>
+                                <h1 class=" text-red-800/80 inline-block bg-yellow-300/50 pt-1 pb-1 pl-5 pr-5 rounded font-bold text-sm">Pendente</h1>
+                            </div>
+                        </div>
+                        <div class="flex flex-col bg-white rounded-xl p-3 cursor-pointer gap-2">   
+                            <div class="flex items-center gap-3">
+                                <div>
+                                    <img src="../../public/images/icons/icon.png" class="w-8 h-8 rounded-sm">
+                                </div>
+                                <h1 class="text-blue-700 font-bold">Maicon Sidnei</h1>
+                            </div>
+                            <div class="flex gap-3 mt-3 items-center">
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 stroke-sky-900">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+                                    </svg>
+                                </div>
+                                <h1 class="text-sm text-sky-900 font-bold">47991076484<h1>
+                                <h1 class="text-sm text-sky-900 font-bold">MLB5B18<h1>
+                            </div>
+                            <div>
+                                <h1 class=" text-red-800/80 inline-block bg-yellow-300/50 pt-1 pb-1 pl-5 pr-5 rounded font-bold text-sm">Pendente</h1>
+                            </div>
+                        </div>
+                        <div class="flex flex-col bg-white rounded-xl p-3 cursor-pointer gap-2">   
+                            <div class="flex items-center gap-3">
+                                <div>
+                                    <img src="../../public/images/icons/icon.png" class="w-8 h-8 rounded-sm">
+                                </div>
+                                <h1 class="text-blue-700 font-bold">Elaine Ribeiro</h1>
+                            </div>
+                            <div class="flex gap-3 mt-3 items-center">
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 stroke-sky-900">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+                                    </svg>
+                                </div>
+                                <h1 class="text-sm text-sky-900 font-bold">47991076484<h1>
+                                <h1 class="text-sm text-sky-900 font-bold">MLB5B18<h1>
+                            </div>
+                            <div>
+                                <h1 class=" text-red-800/80 inline-block bg-yellow-300/50 pt-1 pb-1 pl-5 pr-5 rounded font-bold text-sm">Pendente</h1>
+                            </div>
+                        </div>
+                        <div class="flex flex-col bg-white rounded-xl p-3 cursor-pointer gap-2">   
+                            <div class="flex items-center gap-3">
+                                <div>
+                                    <img src="../../public/images/icons/icon.png" class="w-8 h-8 rounded-sm">
+                                </div>
+                                <h1 class="text-blue-700 font-bold">Eduarda </h1>
+                            </div>
+                            <div class="flex gap-3 mt-3 items-center">
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 stroke-sky-900">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+                                    </svg>
+                                </div>
+                                <h1 class="text-sm text-sky-900 font-bold">47991076484<h1>
+                                <h1 class="text-sm text-sky-900 font-bold">MLB5B18<h1>
+                            </div>
+                            <div>
+                                <h1 class=" text-red-800/80 inline-block bg-yellow-300/50 pt-1 pb-1 pl-5 pr-5 rounded font-bold text-sm">Pendente</h1>
+                            </div>
+                        </div>
+                        <div class="flex flex-col bg-white rounded-xl p-3 cursor-pointer gap-2">   
+                            <div class="flex items-center gap-3">
+                                <div>
+                                    <img src="../../public/images/icons/icon.png" class="w-8 h-8 rounded-sm">
+                                </div>
+                                <h1 class="text-blue-700 font-bold">Adrian Raul Ribeiro</h1>
+                            </div>
+                            <div class="flex gap-3 mt-3 items-center">
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 stroke-sky-900">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+                                    </svg>
+                                </div>
+                                <h1 class="text-sm text-sky-900 font-bold">47991076484<h1>
+                                <h1 class="text-sm text-sky-900 font-bold">MLB5B18<h1>
+                            </div>
+                            <div>
+                                <h1 class=" text-red-800/80 inline-block bg-yellow-300/50 pt-1 pb-1 pl-5 pr-5 rounded font-bold text-sm">Pendente</h1>
+                            </div>
+                        </div>
+                        <div class="flex flex-col bg-white rounded-xl p-3 cursor-pointer gap-2">   
+                            <div class="flex items-center gap-3">
+                                <div>
+                                    <img src="../../public/images/icons/icon.png" class="w-8 h-8 rounded-sm">
+                                </div>
+                                <h1 class="text-blue-700 font-bold">Maicon Sidnei</h1>
+                            </div>
+                            <div class="flex gap-3 mt-3 items-center">
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 stroke-sky-900">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+                                    </svg>
+                                </div>
+                                <h1 class="text-sm text-sky-900 font-bold">47991076484<h1>
+                                <h1 class="text-sm text-sky-900 font-bold">MLB5B18<h1>
+                            </div>
+                            <div>
+                                <h1 class=" text-red-800/80 inline-block bg-yellow-300/50 pt-1 pb-1 pl-5 pr-5 rounded font-bold text-sm">Pendente</h1>
+                            </div>
+                        </div>
+                        <div class="flex flex-col bg-white rounded-xl p-3 cursor-pointer gap-2">   
+                            <div class="flex items-center gap-3">
+                                <div>
+                                    <img src="../../public/images/icons/icon.png" class="w-8 h-8 rounded-sm">
+                                </div>
+                                <h1 class="text-blue-700 font-bold">Elaine Ribeiro</h1>
+                            </div>
+                            <div class="flex gap-3 mt-3 items-center">
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 stroke-sky-900">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+                                    </svg>
+                                </div>
+                                <h1 class="text-sm text-sky-900 font-bold">47991076484<h1>
+                                <h1 class="text-sm text-sky-900 font-bold">MLB5B18<h1>
+                            </div>
+                            <div>
+                                <h1 class=" text-red-800/80 inline-block bg-yellow-300/50 pt-1 pb-1 pl-5 pr-5 rounded font-bold text-sm">Pendente</h1>
+                            </div>
+                        </div>
+                        <div class="flex flex-col bg-white rounded-xl p-3 cursor-pointer gap-2">   
+                            <div class="flex items-center gap-3">
+                                <div>
+                                    <img src="../../public/images/icons/icon.png" class="w-8 h-8 rounded-sm">
+                                </div>
+                                <h1 class="text-blue-700 font-bold">Eduarda </h1>
+                            </div>
+                            <div class="flex gap-3 mt-3 items-center">
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 stroke-sky-900">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+                                    </svg>
+                                </div>
+                                <h1 class="text-sm text-sky-900 font-bold">47991076484<h1>
+                                <h1 class="text-sm text-sky-900 font-bold">MLB5B18<h1>
+                            </div>
+                            <div>
+                                <h1 class=" text-red-800/80 inline-block bg-yellow-300/50 pt-1 pb-1 pl-5 pr-5 rounded font-bold text-sm">Pendente</h1>
+                            </div>
+                        </div>
+                    </div>
             </div>
     </div>
 `
