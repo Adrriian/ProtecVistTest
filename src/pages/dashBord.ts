@@ -3,7 +3,7 @@ import '../style.css';
 export const dashBord = function plate(){
     return `
     <div class="container m-auto lg:flex lg:min-h-full">
-        <div id="bar" class="min-h-full bg-slate-800 z-99 absolute p-5 w-0 -ml-10 overflow-hidden transition-all ease-linear duration-500 lg:flex lg:flex-col lg:static lg:w-85 lg:min-h-screen">
+        <div id="bar" class="min-h-full bg-slate-800 z-99 absolute p-5 w-0 -ml-10 overflow-hidden transition-all ease-linear duration-500 lg:flex lg:flex-col lg:static lg:w-85 lg:min-h-screen lg:ml-0">
             <div class="flex items-center border-b border-gray-400 pb-4 gap-5 ml-10">
                 <div  class="flex items-center bg-blue-700 p-2 rounded">    
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 stroke-white">
@@ -14,7 +14,7 @@ export const dashBord = function plate(){
                     <h1 class="font-bold text-white text-xl ">ProtecVist </h1>
                     <h1 class="text-white text-sm">Sistema De Vistorias</h1>
                 </div>
-                <div id="closes" class="cursor-pointer">
+                <div id="closes" class="cursor-pointer lg:hidden">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 stroke-white">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
                     </svg>
@@ -25,7 +25,7 @@ export const dashBord = function plate(){
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 stroke-white">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z" />
                     </svg>
-                    <h1 class="cursor-pointer font-bold text-white ">Cadastrar Cliente<h1>
+                    <h1 id="link" class="cursor-pointer font-bold text-white ">Cadastrar Cliente<h1>
                 </div>
             </div>
         </div>
