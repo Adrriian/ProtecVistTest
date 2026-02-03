@@ -107,7 +107,7 @@ export const dashBord = function plate(){
                                 <h1 class="text-sm text-sky-900 font-bold">MLB5B18<h1>
                             </div>
                             <div>
-                                <h1 class=" text-red-800/80 inline-block bg-yellow-300/50 pt-1 pb-1 pl-5 pr-5 rounded font-bold text-sm">Pendente</h1>
+                                <h1 class=" text-blue-700 inline-block bg-green-300/50 pt-1 pb-1 pl-5 pr-5 rounded font-bold text-sm">Concluido</h1>
                             </div>
                         </div>
                         <div class="flex flex-col bg-white rounded-xl p-3 cursor-pointer gap-2">   
@@ -127,7 +127,7 @@ export const dashBord = function plate(){
                                 <h1 class="text-sm text-sky-900 font-bold">MLB5B18<h1>
                             </div>
                             <div>
-                                <h1 class=" text-red-800/80 inline-block bg-yellow-300/50 pt-1 pb-1 pl-5 pr-5 rounded font-bold text-sm">Pendente</h1>
+                                <h1 class=" text-blue-800/80 inline-block bg-red-300/50 pt-1 pb-1 pl-5 pr-5 rounded font-bold text-sm">Cancelado</h1>
                             </div>
                         </div>
                         <div class="flex flex-col bg-white rounded-xl p-3 cursor-pointer gap-2">   
@@ -147,7 +147,7 @@ export const dashBord = function plate(){
                                 <h1 class="text-sm text-sky-900 font-bold">MLB5B18<h1>
                             </div>
                             <div>
-                                <h1 class=" text-red-800/80 inline-block bg-yellow-300/50 pt-1 pb-1 pl-5 pr-5 rounded font-bold text-sm">Pendente</h1>
+                                <h1 class=" text-blue-800/80 inline-block bg-yellow-300/50 pt-1 pb-1 pl-5 pr-5 rounded font-bold text-sm">Pendente</h1>
                             </div>
                         </div>
                         <div class="flex flex-col bg-white rounded-xl p-3 cursor-pointer gap-2">   
