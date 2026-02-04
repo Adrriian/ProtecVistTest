@@ -102,7 +102,7 @@ export async function show(){
    
     const dados = data.docs.map(doc =>({id:doc.id,  ...(doc.data() as Omit<VistoriaData, "id">)
 }));
-    console.log(dados)
+    
     let showDiv = document.querySelector('#showDiv') as HTMLDivElement
 
     showDiv.innerHTML = ''
