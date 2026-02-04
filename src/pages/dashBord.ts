@@ -101,67 +101,6 @@ export const dashBord = function plate(){
             <div>
                     <h1 class="text-white font-bold text-2xl">Lista de Clientes:</h1>
                     <div id="showDiv" class="flex flex-col gap-5 mt-5 sm:grid sm:grid-cols-2 md:grid-cols-3 ">
-                        <div class="flex flex-col bg-slate-800 dark:bg-white rounded-xl p-3 cursor-pointer gap-2 transition-all duration-300 hover:shadow-[0_0_20px_blue]">   
-                            <div class="flex items-center gap-3">
-                                <div>
-                                    <img src="../../public/images/icons/icon.png" class="w-8 h-8 rounded-sm">
-                                </div>
-                                <h1 class="text-blue-700 font-bold">Adrian Raul Ribeiro</h1>
-                            </div>
-                            <div class="flex gap-3 mt-3 items-center">
-                                <div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 stroke-white dark:stroke-sky-900">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
-                                    </svg>
-                                </div>
-                                <h1 class="text-sm text-white dark:text-sky-900 font-bold">47991076484<h1>
-                                <h1 class="text-sm text-white dark:text-sky-900 font-bold">MLB5B18<h1>
-                            </div>
-                            <div>
-                                <h1 class="text-white dark:text-blue-700 inline-block bg-green-300/50 pt-1 pb-1 pl-5 pr-5 rounded font-bold text-sm">Concluido</h1>
-                            </div>
-                        </div>
-                         <div class="flex flex-col bg-slate-800 dark:bg-white rounded-xl p-3 cursor-pointer gap-2 transition-all duration-300 hover:shadow-[0_0_20px_blue]">   
-                            <div class="flex items-center gap-3">
-                                <div>
-                                    <img src="../../public/images/icons/icon.png" class="w-8 h-8 rounded-sm">
-                                </div>
-                                <h1 class="text-blue-700 font-bold">Adrian Raul Ribeiro</h1>
-                            </div>
-                            <div class="flex gap-3 mt-3 items-center">
-                                <div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 stroke-white dark:stroke-sky-900">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
-                                    </svg>
-                                </div>
-                                <h1 class="text-sm text-white dark:text-sky-900 font-bold">47991076484<h1>
-                                <h1 class="text-sm text-white dark:text-sky-900 font-bold">MLB5B18<h1>
-                            </div>
-                            <div>
-                                <h1 class="text-white dark:text-blue-700 inline-block bg-yellow-300/70 pt-1 pb-1 pl-5 pr-5 rounded font-bold text-sm">Concluido</h1>
-                            </div>
-                        </div>
-                        <div class="flex flex-col bg-slate-800 dark:bg-white rounded-xl p-3 cursor-pointer gap-2 transition-all duration-300 hover:shadow-[0_0_20px_blue]">   
-                            <div class="flex items-center gap-3">
-                                <div>
-                                    <img src="../../public/images/icons/icon.png" class="w-8 h-8 rounded-sm">
-                                </div>
-                                <h1 class="text-blue-700 font-bold">Adrian Raul Ribeiro</h1>
-                            </div>
-                            <div class="flex gap-3 mt-3 items-center">
-                                <div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 stroke-white dark:stroke-sky-900">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
-                                    </svg>
-                                </div>
-                                <h1 class="text-sm text-white dark:text-sky-900 font-bold">47991076484<h1>
-                                <h1 class="text-sm text-white dark:text-sky-900 font-bold">MLB5B18<h1>
-                            </div>
-                            <div>
-                                <h1 class="text-white dark:text-blue-700 inline-block bg-red-300/70 pt-1 pb-1 pl-5 pr-5 rounded font-bold text-sm">Concluido</h1>
-                            </div>
-                        </div>
-
                     </div>
             </div>
     </div>
