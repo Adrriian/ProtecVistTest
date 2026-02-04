@@ -104,8 +104,8 @@ export const dashBord = function plate(){
                     </div>
             </div> 
         </div>
-        <div id="modal" class="absolute m-auto w-0 h-0 overflow-hidden flex items-center justify-center z-99 transition-all duration-500 ease-linear">
-            <div class="bg-blue-500 w-8/10 h-8/10 text-white ">ola</div>
+        <div id="modal" class="rounded-2xl absolute m-auto w-0 h-0 overflow-hidden flex items-center justify-center z-99 transition-all duration-500 ease-linear">
+            <div class="rounded-2xl  p-10 bg-blue-500 w-8/10 h-8/10 text-white ">ola</div>
         </div>
     </div>
 `
