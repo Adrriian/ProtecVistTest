@@ -4,7 +4,7 @@ import '../style.css';
 export const dashBord = function plate(){
     return `
     <div class="container m-auto lg:flex lg:min-h-full">
-        <div id="bar" class="min-h-full bg-slate-800 z-99 absolute p-5 w-0 -ml-10 overflow-hidden transition-all ease-linear duration-500 lg:flex lg:flex-col lg:static lg:w-85 lg:min-h-screen lg:ml-0">
+        <div id="bar" class="min-h-full bg-slate-900 z-99 absolute p-5 w-0 -ml-10 overflow-hidden transition-all ease-linear duration-500 lg:flex lg:flex-col lg:static lg:w-85 lg:min-h-screen lg:ml-0">
             <div class="flex items-center border-b border-gray-400 pb-4 gap-5 ml-10">
                 <div  class="flex items-center bg-blue-700 p-2 rounded">    
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 stroke-white">
