@@ -16,9 +16,11 @@ import { openMenu } from '../events/dashbord.events;'
 import { vistLink } from '../events/vist'
 import { checkRender } from '../services/auth/requireFullAccess'
 import { show } from '../services/dashbord' 
+import { changeColor } from "../services/dashbord";
+import { openModal } from "../services/dashbord";
 //variavel do main
 export let app = document.querySelector('.app') as HTMLElement
-import { changeColor } from "../services/dashbord";
+
 export function renderRouter(url:string, path = true){
     if(path){history.pushState({},'',url) }
 
@@ -42,7 +44,8 @@ export function renderRouter(url:string, path = true){
                app.innerHTML = dashBord()
                openMenu()
                show()
-                   changeColor()
+               changeColor()
+               openModal()
             })
         break;
         case '/link':

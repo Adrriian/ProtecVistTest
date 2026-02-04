@@ -9,6 +9,7 @@ import {
 } from "firebase/firestore";
 import { db } from './firebase'
 import {auth} from './firebase'
+import { doc } from 'firebase/firestore/lite';
 
 type VistoriaData = {
   id: string;
@@ -27,7 +28,7 @@ export function menu(){
     let menuArea = document.querySelector('#bar') as HTMLDivElement
     let bluer = document.querySelector('#bluer') as HTMLDivElement
     
-    if(menuArea.style.width !== "0px" ||menuArea.style.width === "0px" ){
+    if(menuArea.style.width !== "0px" || menuArea.style.width === "0px" ){
         menuArea.style.width = '300px'
         bluer.style.filter = 'blur(5px)'
     }
@@ -175,4 +176,22 @@ export async function show(){
         showDiv.appendChild(area)
     }   
 
+}
+
+export function openModal(){
+    let showDiv = document.querySelectorAll<HTMLDivElement>('#showDiv')
+    let showModal = document.querySelector('#modal') as HTMLDivElement
+    let bar = document.querySelector("#bar") as HTMLDivElement
+    let bluer = document.querySelector('#bluer') as HTMLDivElement
+
+    showDiv.forEach(item => {
+        item.addEventListener('click', ()=>{
+            if(showModal.style.width !== "0px" || showModal.style.width === "0px" ){
+                showModal.style.width = "100%",
+                showModal.style.height = "100%",
+                bar.style.filter = "blur(5px)",
+                bluer.style.filter = "blur(5px)" 
+            }
+        })
+    });
 }
