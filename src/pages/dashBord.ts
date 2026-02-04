@@ -1,5 +1,5 @@
 import '../style.css';
-import {show} from '../services/dashbord'
+
 
 export const dashBord = function plate(){
     return `
