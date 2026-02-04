@@ -1,4 +1,5 @@
 import '../style.css';
+import {show} from '../services/dashbord'
 
 export const dashBord = function plate(){
     return `
@@ -99,7 +100,7 @@ export const dashBord = function plate(){
             </div>
             <div>
                     <h1 class="text-white font-bold text-2xl">Lista de Clientes:</h1>
-                    <div class="flex flex-col gap-5 mt-5 sm:grid sm:grid-cols-2 md:grid-cols-3 ">
+                    <div id="showDiv" class="flex flex-col gap-5 mt-5 sm:grid sm:grid-cols-2 md:grid-cols-3 ">
                         <div class="flex flex-col bg-slate-800 dark:bg-white rounded-xl p-3 cursor-pointer gap-2 transition-all duration-300 hover:shadow-[0_0_20px_blue]">   
                             <div class="flex items-center gap-3">
                                 <div>
