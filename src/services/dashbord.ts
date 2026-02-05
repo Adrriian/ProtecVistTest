@@ -1,7 +1,6 @@
 import '../style.css'
 import { renderRouter } from '../router/router'
 import { 
-  getFirestore,
   collection,
   query,
   where,
@@ -9,7 +8,7 @@ import {
 } from "firebase/firestore";
 import { db } from './firebase'
 import {auth} from './firebase'
-import { doc } from 'firebase/firestore/lite';
+
 
 type VistoriaData = {
   id: string;
