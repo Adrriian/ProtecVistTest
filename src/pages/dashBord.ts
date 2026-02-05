@@ -3,7 +3,7 @@ import '../style.css';
 
 export const dashBord = function plate(){
     return `
-    <div id="modal" class="container rounded-2xl absolute m-auto w-0 h-0 overflow-hidden flex items-center justify-center z-99 transition-all duration-500 ease-linear">
+    <div id="modal" class="container rounded-2xl absolute m-auto w-0 h-0 overflow-hidden flex items-center justify-center z-999 transition-all duration-500 ease-linear">
             <div class="rounded-2xl  p-10 bg-blue-500 w-8/10 h-8/10 text-white ">ola, mundo!!</div>
     </div>
     <div class="container m-auto lg:flex lg:min-h-full">
