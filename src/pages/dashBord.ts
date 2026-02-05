@@ -3,10 +3,10 @@ import '../style.css';
 
 export const dashBord = function plate(){
     return `
-    <div class="container m-auto lg:flex lg:min-h-full">
-        <div id="modal" class="rounded-2xl absolute m-auto w-0 h-0 overflow-hidden flex items-center justify-center z-99 transition-all duration-500 ease-linear">
+    <div id="modal" class="container rounded-2xl absolute m-auto w-0 h-0 overflow-hidden flex items-center justify-center z-99 transition-all duration-500 ease-linear">
             <div class="rounded-2xl  p-10 bg-blue-500 w-8/10 h-8/10 text-white ">ola, mundo!!</div>
-        </div>
+    </div>
+    <div class="container m-auto lg:flex lg:min-h-full">
         <div id="bar" class="min-h-full bg-slate-900 z-99 absolute p-5 w-0 -ml-10 overflow-hidden transition-all ease-linear duration-500 lg:flex lg:flex-col lg:static lg:w-85 lg:min-h-screen lg:ml-0">
             <div class="flex items-center border-b border-gray-400 pb-4 gap-5 ml-10">
                 <div  class="flex items-center bg-blue-700 p-2 rounded">    
