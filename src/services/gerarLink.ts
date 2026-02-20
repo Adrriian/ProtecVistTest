@@ -1,5 +1,5 @@
-import { addDoc, collection, setDoc } from "firebase/firestore";
-import { renderRouter } from "../router/router";
+import { addDoc, collection } from "firebase/firestore";
+
 import { auth } from "./firebase";
 import { db } from "./firebase";
 
