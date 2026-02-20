@@ -94,15 +94,15 @@ export async function show(){
 
     const uid = user.uid;
 
-    const vistoriaRef = collection(db, 'vistoria')
+    const vistoriaRef = collection(db, 'consultores',uid,"clientes")
     const q = query(vistoriaRef,where("userUid", "==", uid))
 
     const data = await getDocs(q)
 
    
-    const dados = data.docs.map(doc =>({id:doc.id,  ...(doc.data() as Omit<VistoriaData, "id">)
-}));
-    
+    const dados = data.docs.map(doc =>({id:doc.id,  ...(doc.data() as Omit<VistoriaData, "id">)}));
+    console.log(dados)
+
     let showDiv = document.querySelector('#showDiv') as HTMLDivElement
 
     showDiv.innerHTML = ''

@@ -15,7 +15,7 @@ export const link = function gerarLink(){
                 </div>
                 <div class="flex flex-col   gap-2 " >
                     <label for="telefone" class="text-2xl text-blue-700 font-bold dark:text-white">Telefone</label>
-                    <input id="telefone" class="z-1 p-1 w-full border-blue-700 text-slate-700 placeholder:text-slate-700 dark:text-slate-900 dark:placeholder:text-slate-900 dark:bg-white rounded border-4 outline-0 dark:border-blue-700  font-bold" type="text" placeholder="Digite o telefone" >
+                    <input id="telefone" class="z-1 p-1 w-full border-blue-700 text-slate-700 placeholder:text-slate-700 dark:text-slate-900 dark:placeholder:text-slate-900 dark:bg-white rounded border-4 outline-0 dark:border-blue-700  font-bold" type="number" placeholder="Digite o telefone (Ex:47988225533)" >
                 </div>
             </div>
             <div class="flex flex-col gap-2 ">

@@ -18,6 +18,7 @@ import { checkRender } from '../services/auth/requireFullAccess'
 import { show } from '../services/dashbord' 
 import { changeColor } from "../services/dashbord";
 import { openModal } from "../services/dashbord";
+import { toUpperCase } from '../events/gerarlink.events'
 //variavel do main
 export let app = document.querySelector('.app') as HTMLElement
 
@@ -50,6 +51,7 @@ export function renderRouter(url:string, path = true){
         break;
         case '/link':
             app.innerHTML = link()
+            toUpperCase()
             vistLink()
         break;
          case '/vist':
