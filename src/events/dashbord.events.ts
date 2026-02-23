@@ -11,6 +11,7 @@ export function modalEvents(){
 
         if(element.closest(".open")){
             modal.showModal()
+            modal.classList.add('flex')
         }
     })
 }

@@ -108,36 +108,42 @@ export const dashBord = function plate(){
         </div>
         
     </div>
-    <dialog id="modal" class="min-w-full min-h-full outline-0 bg-black/50 flex items-center justify-center backdrop-blur-sm">
+    <dialog id="modal" class="min-w-full min-h-full outline-0 bg-black/50 backdrop-blur-sm items-center justify-center">
         <div class="bg-slate-900 text-white rounded-2xl min-w-4/5 min-h-[80dvh]">
             <div class="w-full">
-                <div class=" mt-5 ml-5 mr-5 flex items-center justify-start">
+                <div class=" mt-5 ml-5 mr-5 flex items-center justify-between">
                     <h1>Nome do Cliente<h1>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 flex justify-self-end">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 bg-white stroke-slate-900 rounded-2xl cursor-pointer">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
                     </svg>
                 </div>
                 <div class="border-b border-gray-300 mt-1"></div>
-                <div class="p-5">
-                    <div>
+                <div class="flex flex-col justify-center gap-2 p-5">
+                    <div class="flex items-center gap-2 ">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
                         </svg>
                         <h1>Dados do Cliente<h1> 
                     </div> 
-                    <div>
-                        <div>
+                    <div class="flex flex-col bg-sky-900 rounded-xl p-5 gap-3">
+                        <div class="flex flex-col justify-center border-b border-gray-300 gap-2">
                             <div>Nome do Cliente</div>
                             <div>Telefone</div>
                         </div>
-                        <div>
+                        <div class="flex flex-col justify-center gap-2">
                             <div>Placa</div>
                             <div>Status</div>
                         </div>
                     </div>
                 </div>
-                <div class="p-5">
-                    <h1>Fotos da Vistoria<h1>
+                <div class="flex flex-col gap-5 p-5">
+                    <div class="flex gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 0 1 5.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 0 0-1.134-.175 2.31 2.31 0 0 1-1.64-1.055l-.822-1.316a2.192 2.192 0 0 0-1.736-1.039 48.774 48.774 0 0 0-5.232 0 2.192 2.192 0 0 0-1.736 1.039l-.821 1.316Z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0ZM18.75 10.5h.008v.008h-.008V10.5Z" />
+                        </svg>
+                        <h1>Fotos da Vistoria<h1>
+                    </div>
                     <div class="overflow-y-scroll h-[30dvh]">
                         <div>
                             <img src=""/>
@@ -197,12 +203,17 @@ export const dashBord = function plate(){
                         </div>
                     </div>
                 </div>
-                <div class="p-5">
-                    <div>
-                        <h1>Confirmar Vistoria</h1>
+                <div class="flex flex-col gap-5 p-5">
+                    <div class="flex gap-2 bg-green-700/50 rounded-xl p-2 cursor-pointer">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 stroke-green-600">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                        <h1 class="text-white">Confirmar Vistoria</h1>
                     </div>
-                    
-                    <div>
+                    <div  class="flex gap-2 bg-red-600/25 rounded-xl p-2 cursor-pointer" >
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 stroke-red-500">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                    </svg>
                         <h1>Cancelar Vistoria</h1>
                     </div>
                 </div>
