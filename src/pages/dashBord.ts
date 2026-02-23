@@ -109,7 +109,7 @@ export const dashBord = function plate(){
         
     </div>
     <dialog id="modal" class="min-w-full min-h-full outline-0 bg-black/50 backdrop-blur-sm items-center justify-center">
-        <div class="bg-slate-900 text-white rounded-2xl min-w-4/5 min-h-[80dvh]">
+        <div class="bg-slate-900 text-white rounded-2xl max-w-[90%] max-h-[90dvh] box-border overflow-y-scroll">
             <div class="w-full">
                 <div class=" mt-5 ml-5 mr-5 flex items-center justify-between">
                     <h1>Nome do Cliente<h1>
