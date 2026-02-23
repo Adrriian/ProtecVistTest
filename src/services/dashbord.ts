@@ -112,7 +112,7 @@ export async function show(){
         
         //area pai
         let area = document.createElement('div')
-        area.classList.add('flex', 'flex-col', 'bg-slate-800', 'dark:bg-white', 'rounded-xl', 'p-3', 'cursor-pointer', 'gap-2', 'transition-all', 'duration-300', 'hover:shadow-[0_0_20px_blue]')
+        area.classList.add('open','flex', 'flex-col', 'bg-slate-800', 'dark:bg-white', 'rounded-xl', 'p-3', 'cursor-pointer', 'gap-2', 'transition-all', 'duration-300', 'hover:shadow-[0_0_20px_blue]')
         //areamae
         let areatwo = document.createElement('div') as HTMLDivElement
         areatwo?.classList.add('flex', 'items-center', 'gap-3')
@@ -178,19 +178,15 @@ export async function show(){
 }
 
 export function openModal(){
-    let showDiv = document.querySelectorAll<HTMLDivElement>('#showDiv')
-    let showModal = document.querySelector('#modal') as HTMLDivElement
-    let bar = document.querySelector("#bar") as HTMLDivElement
-    let bluer = document.querySelector('#bluer') as HTMLDivElement
+    const area_blur = document.querySelector('.area_blur') as HTMLDivElement
+    const modal = document.getElementById('modal') as HTMLDivElement
+    const modalContent = document.getElementById('modalContent') as HTMLDivElement
 
-    showDiv.forEach(item => {
-        item.addEventListener('click', ()=>{
-            if(showModal.style.width !== "0px" || showModal.style.width === "0px" ){
-                showModal.style.width = "100%",
-                showModal.style.height = "100%",
-                bar.style.filter = "blur(5px)",
-                bluer.style.filter = "blur(5px)" 
-            }
-        })
-    });
+    modal.classList.remove('opacity-0', 'pointer-events-none', )
+    modal.classList.add('opacity-100', 'pointer-events-auto', )
+    area_blur.classList.add('blur')
+   requestAnimationFrame(() => {
+    modalContent.classList.remove('scale-95', 'translate-y-4', 'opacity-0')
+    modalContent.classList.add('scale-100', 'translate-y-0', 'opacity-100')
+  })
 }

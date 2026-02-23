@@ -3,112 +3,9 @@ import '../style.css';
 
 export const dashBord = function plate(){
     return `
-    <div id="modal" class="container rounded-2xl absolute m-auto w-0 h-0 overflow-hidden flex items-center justify-center z-999 transition-all duration-500 ease-linear">
-            <div class="grid grid-cols-1 rounded-2xl  p-10 bg-slate-800 w-8/10 h-8/10 text-white ">
-                <div>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                    </svg>
-                </div>
-                <div class="flex flex-col gap-5">
-                    <div class="flex flex-col">
-                        <h1>Nome:</h1>
-                        <h1>Adrian Raul Ribeiro</h1>
-                    </div>
-                    <div class="flex flex-col">
-                        <h1>Placa:</h1>
-                        <h1>MLR5B18</h1>
-                    </div>
-                    <div class="flex flex-col">
-                        <h1>Telefone:</h1>
-                        <h1>47991076484</h1>
-                    </div>
-                    <div class="flex flex-col">
-                        <h1>Status:</h1>
-                        <h1>Pendente</h1>
-                    </div>
-                </div>
-                <div class="grid grid-cols-2 overflow-y-scroll">
-                    <div class="flex flex-col justify-center items-center p-2">
-                        <img class="w-20 h-20 bg-cover rounded border-2 border-dashed border-zinc-900 p-2" src="https://quatrorodas.abril.com.br/wp-content/uploads/2023/06/1FLP00991.jpg?quality=70&strip=info&w=1280&h=720&crop=1"/>
-                        <h1 class="mt-2">Frente:</h1>
-                    </div>
-                    <div class="flex flex-col justify-center items-center p-2">
-                        <img class="w-20 h-20 bg-cover rounded border-2 border-dashed border-zinc-900 p-2" src="https://quatrorodas.abril.com.br/wp-content/uploads/2023/06/1FLP00991.jpg?quality=70&strip=info&w=1280&h=720&crop=1"/>
-                        <h1 class="mt-2">Frente:</h1>
-                    </div>
-                    <div class="flex flex-col justify-center items-center p-2">
-                        <img class="w-20 h-20 bg-cover rounded border-2 border-dashed border-zinc-900 p-2" src="https://quatrorodas.abril.com.br/wp-content/uploads/2023/06/1FLP00991.jpg?quality=70&strip=info&w=1280&h=720&crop=1"/>
-                        <h1 class="mt-2">Frente:</h1>
-                    </div>
-                    <div class="flex flex-col justify-center items-center p-2">
-                        <img class="w-20 h-20 bg-cover rounded border-2 border-dashed border-zinc-900 p-2" src="https://quatrorodas.abril.com.br/wp-content/uploads/2023/06/1FLP00991.jpg?quality=70&strip=info&w=1280&h=720&crop=1"/>
-                        <h1 class="mt-2">Frente:</h1>
-                    </div>
-                    <div class="flex flex-col justify-center items-center p-2">
-                        <img class="w-20 h-20 bg-cover rounded border-2 border-dashed border-zinc-900 p-2" src="https://quatrorodas.abril.com.br/wp-content/uploads/2023/06/1FLP00991.jpg?quality=70&strip=info&w=1280&h=720&crop=1"/>
-                        <h1 class="mt-2">Frente:</h1>
-                    </div>
-                    <div class="flex flex-col justify-center items-center p-2">
-                        <img class="w-20 h-20 bg-cover rounded border-2 border-dashed border-zinc-900 p-2" src="https://quatrorodas.abril.com.br/wp-content/uploads/2023/06/1FLP00991.jpg?quality=70&strip=info&w=1280&h=720&crop=1"/>
-                        <h1 class="mt-2">Frente:</h1>
-                    </div>
-                    <div class="flex flex-col justify-center items-center p-2">
-                        <img class="w-20 h-20 bg-cover rounded border-2 border-dashed border-zinc-900 p-2" src="https://quatrorodas.abril.com.br/wp-content/uploads/2023/06/1FLP00991.jpg?quality=70&strip=info&w=1280&h=720&crop=1"/>
-                        <h1 class="mt-2">Frente:</h1>
-                    </div>
-                    <div class="flex flex-col justify-center items-center p-2">
-                        <img class="w-20 h-20 bg-cover rounded border-2 border-dashed border-zinc-900 p-2" src="https://quatrorodas.abril.com.br/wp-content/uploads/2023/06/1FLP00991.jpg?quality=70&strip=info&w=1280&h=720&crop=1"/>
-                        <h1 class="mt-2">Frente:</h1>
-                    </div>
-                    <div class="flex flex-col justify-center items-center p-2">
-                        <img class="w-20 h-20 bg-cover rounded border-2 border-dashed border-zinc-900 p-2" src="https://quatrorodas.abril.com.br/wp-content/uploads/2023/06/1FLP00991.jpg?quality=70&strip=info&w=1280&h=720&crop=1"/>
-                        <h1 class="mt-2">Frente:</h1>
-                    </div>
-                    <div class="flex flex-col justify-center items-center p-2">
-                        <img class="w-20 h-20 bg-cover rounded border-2 border-dashed border-zinc-900 p-2" src="https://quatrorodas.abril.com.br/wp-content/uploads/2023/06/1FLP00991.jpg?quality=70&strip=info&w=1280&h=720&crop=1"/>
-                        <h1 class="mt-2">Frente:</h1>
-                    </div>
-                    <div class="flex flex-col justify-center items-center p-2">
-                        <img class="w-20 h-20 bg-cover rounded border-2 border-dashed border-zinc-900 p-2" src="https://quatrorodas.abril.com.br/wp-content/uploads/2023/06/1FLP00991.jpg?quality=70&strip=info&w=1280&h=720&crop=1"/>
-                        <h1 class="mt-2">Frente:</h1>
-                    </div>
-                    <div class="flex flex-col justify-center items-center p-2">
-                        <img class="w-20 h-20 bg-cover rounded border-2 border-dashed border-zinc-900 p-2" src="https://quatrorodas.abril.com.br/wp-content/uploads/2023/06/1FLP00991.jpg?quality=70&strip=info&w=1280&h=720&crop=1"/>
-                        <h1 class="mt-2">Frente:</h1>
-                    </div>
-                    <div class="flex flex-col justify-center items-center p-2">
-                        <img class="w-20 h-20 bg-cover rounded border-2 border-dashed border-zinc-900 p-2" src="https://quatrorodas.abril.com.br/wp-content/uploads/2023/06/1FLP00991.jpg?quality=70&strip=info&w=1280&h=720&crop=1"/>
-                        <h1 class="mt-2">Frente:</h1>
-                    </div>
-                    <div class="flex flex-col justify-center items-center p-2">
-                        <img class="w-20 h-20 bg-cover rounded border-2 border-dashed border-zinc-900 p-2" src="https://quatrorodas.abril.com.br/wp-content/uploads/2023/06/1FLP00991.jpg?quality=70&strip=info&w=1280&h=720&crop=1"/>
-                        <h1 class="mt-2">Frente:</h1>
-                    </div><div class="flex flex-col justify-center items-center p-2">
-                        <img class="w-20 h-20 bg-cover rounded border-2 border-dashed border-zinc-900 p-2" src="https://quatrorodas.abril.com.br/wp-content/uploads/2023/06/1FLP00991.jpg?quality=70&strip=info&w=1280&h=720&crop=1"/>
-                        <h1 class="mt-2">Frente:</h1>
-                    </div>
-                    <div class="flex flex-col justify-center items-center p-2">
-                        <img class="w-20 h-20 bg-cover rounded border-2 border-dashed border-zinc-900 p-2" src="https://quatrorodas.abril.com.br/wp-content/uploads/2023/06/1FLP00991.jpg?quality=70&strip=info&w=1280&h=720&crop=1"/>
-                        <h1 class="mt-2">Frente:</h1>
-                    </div>
-                    <div class="flex flex-col justify-center items-center p-2">
-                        <img class="w-20 h-20 bg-cover rounded border-2 border-dashed border-zinc-900 p-2" src="https://quatrorodas.abril.com.br/wp-content/uploads/2023/06/1FLP00991.jpg?quality=70&strip=info&w=1280&h=720&crop=1"/>
-                        <h1 class="mt-2">Frente:</h1>
-                    </div>
-                    <div class="flex flex-col justify-center items-center p-2">
-                        <img class="w-20 h-20 bg-cover rounded border-2 border-dashed border-zinc-900 p-2" src="https://quatrorodas.abril.com.br/wp-content/uploads/2023/06/1FLP00991.jpg?quality=70&strip=info&w=1280&h=720&crop=1"/>
-                        <h1 class="mt-2">Frente:</h1>
-                    </div>
-                    <div class="flex flex-col justify-center items-center p-2">
-                        <img class="w-20 h-20 bg-cover rounded border-2 border-dashed border-zinc-900 p-2" src="https://quatrorodas.abril.com.br/wp-content/uploads/2023/06/1FLP00991.jpg?quality=70&strip=info&w=1280&h=720&crop=1"/>
-                        <h1 class="mt-2">Frente:</h1>
-                    </div>
-                </div>
-            </div>
-    </div>
-    <div class="container m-auto lg:flex lg:min-h-full">
-        <div id="bar" class="min-h-full bg-slate-900 z-99 absolute p-5 w-0 -ml-10 overflow-hidden transition-all ease-linear duration-500 lg:flex lg:flex-col lg:static lg:w-85 lg:min-h-screen lg:ml-0">
+       
+    <div class="container m-auto lg:flex lg:min-h-full area_blur">
+        <div id="bar" class="min-h-full  bg-slate-900 z-99 absolute p-5 w-0 -ml-10 overflow-hidden transition-all ease-linear duration-500 lg:flex lg:flex-col lg:static lg:w-85 lg:min-h-screen lg:ml-0">
             <div class="flex items-center border-b border-gray-400 pb-4 gap-5 ml-10">
                 <div  class="flex items-center bg-blue-700 p-2 rounded">    
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 stroke-white">
@@ -205,10 +102,14 @@ export const dashBord = function plate(){
             <div>
                     <h1 class="text-white font-bold text-2xl">Lista de Clientes:</h1>
                     <div id="showDiv" class="flex flex-col gap-5 mt-5 sm:grid sm:grid-cols-2 md:grid-cols-3 ">
+                        
                     </div>
             </div> 
         </div>
         
+    </div>
+    <div id="modal" class="fixed inset-0 bg-black/60 z-50 pointer-events-none flex items-center justify-center opacity-0 transition-opacity duration-100">
+        <div id="modalContent" class=" w-[90%] bg-slate-900 p-6 rounded-xl max-w-md transform scale-95 translate-y-4 opacity-0 transition-opacity  duration-150 ease-out will-change-transform">olá mundo!!!!</div>
     </div>
 `
 }
