@@ -12,7 +12,7 @@ import {changePasswordEvents} from '../events/changePassword.events'
 import {loginEvents} from '../events/login.router.events'
 import {showpassword} from '../events/register.events'
 import {btnRegister} from '../events/register.events'
-import { openMenu } from '../events/dashbord.events'
+import { closeModal, openMenu } from '../events/dashbord.events'
 import { vistLink } from '../events/vist'
 import { checkRender } from '../services/auth/requireFullAccess'
 import { show } from '../services/dashbord' 
@@ -47,6 +47,7 @@ export function renderRouter(url:string, path = true){
                show()
                changeColor()
                modalEvents()
+               closeModal()
             })
         break;
         case '/link':

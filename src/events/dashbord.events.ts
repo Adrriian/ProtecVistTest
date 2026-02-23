@@ -15,6 +15,18 @@ export function modalEvents(){
         }
     })
 }
+
+export function closeModal(){
+    const modal = document.querySelector('#modal') as HTMLDialogElement | null
+    if(!modal) return
+    const close = document.querySelector('.close') as HTMLElement
+
+    close.addEventListener('click', ()=>{
+        modal.close()
+        modal.classList.remove('flex')
+    })
+    
+}
 export function openMenu(){
     document.querySelector('#menuarea')?.addEventListener('click', menu)
     document.querySelector('#link')?.addEventListener('click', goGerarLink)
