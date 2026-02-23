@@ -4,7 +4,7 @@ import '../style.css';
 export const dashBord = function plate(){
     return `
        
-    <div class="container m-auto lg:flex lg:min-h-full area_blur">
+    <div class="container m-auto lg:flex lg:min-h-full area_blur ">
         <div id="bar" class="min-h-full  bg-slate-900 z-99 absolute p-5 w-0 -ml-10 overflow-hidden transition-all ease-linear duration-500 lg:flex lg:flex-col lg:static lg:w-85 lg:min-h-screen lg:ml-0">
             <div class="flex items-center border-b border-gray-400 pb-4 gap-5 ml-10">
                 <div  class="flex items-center bg-blue-700 p-2 rounded">    
@@ -108,8 +108,106 @@ export const dashBord = function plate(){
         </div>
         
     </div>
-    <div id="modal" class="fixed inset-0 bg-black/60 z-50 pointer-events-none flex items-center justify-center opacity-0 transition-opacity duration-100">
-        <div id="modalContent" class=" w-[90%] bg-slate-900 p-6 rounded-xl max-w-md transform scale-95 translate-y-4 opacity-0 transition-opacity  duration-150 ease-out will-change-transform">olá mundo!!!!</div>
-    </div>
+    <dialog id="modal" class="min-w-full min-h-full outline-0 bg-black/50 flex items-center justify-center backdrop-blur-sm">
+        <div class="bg-slate-900 text-white rounded-2xl min-w-4/5 min-h-[80dvh]">
+            <div class="w-full">
+                <div class=" mt-5 ml-5 mr-5 flex items-center justify-start">
+                    <h1>Nome do Cliente<h1>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 flex justify-self-end">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                    </svg>
+                </div>
+                <div class="border-b border-gray-300 mt-1"></div>
+                <div class="p-5">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                        </svg>
+                        <h1>Dados do Cliente<h1> 
+                    </div> 
+                    <div>
+                        <div>
+                            <div>Nome do Cliente</div>
+                            <div>Telefone</div>
+                        </div>
+                        <div>
+                            <div>Placa</div>
+                            <div>Status</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-5">
+                    <h1>Fotos da Vistoria<h1>
+                    <div class="overflow-y-scroll h-[30dvh]">
+                        <div>
+                            <img src=""/>
+                            <h1>Frente</h1>
+                        </div>
+                        <div>
+                            <img src=""/>
+                            <h1>Frente</h1>
+                        </div><div>
+                            <img src=""/>
+                            <h1>Frente</h1>
+                        </div><div>
+                            <img src=""/>
+                            <h1>Frente</h1>
+                        </div><div>
+                            <img src=""/>
+                            <h1>Frente</h1>
+                        </div><div>
+                            <img src=""/>
+                            <h1>Frente</h1>
+                        </div><div>
+                            <img src=""/>
+                            <h1>Frente</h1>
+                        </div><div>
+                            <img src=""/>
+                            <h1>Frente</h1>
+                        </div><div>
+                            <img src=""/>
+                            <h1>Frente</h1>
+                        </div><div>
+                            <img src=""/>
+                            <h1>Frente</h1>
+                        </div><div>
+                            <img src=""/>
+                            <h1>Frente</h1>
+                        </div><div>
+                            <img src=""/>
+                            <h1>Frente</h1>
+                        </div><div>
+                            <img src=""/>
+                            <h1>Frente</h1>
+                        </div><div>
+                            <img src=""/>
+                            <h1>Frente</h1>
+                        </div><div>
+                            <img src=""/>
+                            <h1>Frente</h1>
+                        </div><div>
+                            <img src=""/>
+                            <h1>Frente</h1>
+                        </div><div>
+                            <img src=""/>
+                            <h1>Frente</h1>
+                        </div><div>
+                            <img src=""/>
+                            <h1>Frente</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-5">
+                    <div>
+                        <h1>Confirmar Vistoria</h1>
+                    </div>
+                    
+                    <div>
+                        <h1>Cancelar Vistoria</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </dialog>
 `
 }
