@@ -185,8 +185,7 @@ export function openModal(){
     modal.classList.remove('opacity-0', 'pointer-events-none', )
     modal.classList.add('opacity-100', 'pointer-events-auto', )
     area_blur.classList.add('blur')
-   requestAnimationFrame(() => {
+
     modalContent.classList.remove('scale-95', 'translate-y-4', 'opacity-0')
     modalContent.classList.add('scale-100', 'translate-y-0', 'opacity-100')
-  })
 }
