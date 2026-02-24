@@ -1,4 +1,4 @@
-import { menu } from "../services/dashbord";
+import { dataModal, menu } from "../services/dashbord";
 import { goGerarLink} from "../services/dashbord"; 
 import { close } from "../services/dashbord";
 
@@ -11,6 +11,7 @@ export function modalEvents(){
 
         if(element.closest(".open")){
             modal.showModal()
+            dataModal()
             modal.classList.add('flex')
         }
     })

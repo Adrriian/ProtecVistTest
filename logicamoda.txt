@@ -1,0 +1,5 @@
+criar uma função que pegue o id quando for clicado
+- precisar criar uma função que quando for clicado parar abrir o modal e ele pegue o data.user.id, logo essa função tem que estar dentro da função de abrir modal
+
+preciso criar uma função que vai exibir os dados na tela quando abrir o modal (no caso a estrutura)
+- preciso então fazer uma função só para estrutura e quando clicar no para abrir o modal inserir essa estrutura dentro do dialog.

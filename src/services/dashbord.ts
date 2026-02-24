@@ -4,10 +4,11 @@ import {
   collection,
   query,
   where,
-  getDocs
+  getDocs,
 } from "firebase/firestore";
 import { db } from './firebase'
 import {auth} from './firebase'
+
 
 
 type VistoriaData = {
@@ -113,6 +114,7 @@ export async function show(){
         //area pai
         let area = document.createElement('div')
         area.classList.add('open','flex', 'flex-col', 'bg-slate-800', 'dark:bg-white', 'rounded-xl', 'p-3', 'cursor-pointer', 'gap-2', 'transition-all', 'duration-300', 'hover:shadow-[0_0_20px_blue]')
+        area.dataset.userId = dados[i].id
         //areamae
         let areatwo = document.createElement('div') as HTMLDivElement
         areatwo?.classList.add('flex', 'items-center', 'gap-3')
@@ -177,3 +179,204 @@ export async function show(){
 
 }
 
+export function dataModal(){
+        const dialog = document.querySelector('#modal')
+       // div pai e div mãe
+            const pai = document.createElement('div')
+            const mae = document.createElement('div')
+
+        // classes div pai e mãe
+            pai.classList.add('bg-slate-900', 'text-white', 'rounded-2xl', 'max-w-[90%]','min-w-[80%]','min-h-[80%]', 'max-h-[90dvh]', 'box-border', 'overflow-y-scroll')
+            mae.classList.add('w-full')
+
+        //cabeçalho
+
+        //div cabeçalho
+            const cabecalho = document.createElement('div')
+            const bordaCabecalho = document.createElement('div')
+            const h1Cabecalho = document.createElement('h1')
+            const svgCabecalho = document.createElement('div')
+
+        // classes das div cabeçalho
+            cabecalho.classList.add('mt-5', 'ml-5', 'mr-5', 'flex', 'items-center', 'justify-between')
+            bordaCabecalho.classList.add('border-b', 'border-gray-300', 'mt-1')
+            svgCabecalho.classList.add('close')
+        //dados cabeçalho
+            h1Cabecalho.innerHTML = "nome do cliente"
+            svgCabecalho.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 bg-white stroke-slate-900 rounded-2xl cursor-pointer"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" /> </svg>'
+
+        //estrutura cabeçalho
+            cabecalho.appendChild(h1Cabecalho)
+            cabecalho.appendChild(svgCabecalho)
+            
+        //div dados do cliente
+            const dateClientArea = document.createElement('div')
+            const dateTitulo = document.createElement('div')
+            const dateClient = document.createElement('div')
+
+        // classes das div pais da area de dados de clientes
+            dateClientArea.classList.add('flex', 'flex-col', 'justify-center', 'gap-2', 'p-5')
+            dateTitulo.classList.add('flex', 'items-center', 'gap-2')
+            dateClient.classList.add('grid', 'grid-cols-1', 'bg-sky-900', 'rounded-xl', 'p-5', 'gap-3', 'sm:grid-cols-2')
+        
+        
+        //dados do titulo
+
+        //estrutura dateTitulo
+            const svgTitulo = document.createElement('div')
+            svgTitulo.innerHTML =' <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" /></svg>'
+
+            const h1Titulo = document.createElement('h1')
+            h1Titulo.innerHTML = "Dados do CLiente"
+
+            dateTitulo.appendChild(svgTitulo)
+            dateTitulo.appendChild(h1Titulo)
+        
+
+        // Dados do Cliente
+
+        //estrutura dateClient
+            const clientAreaOne = document.createElement('div')
+            clientAreaOne.classList.add('grid', 'grid-cols-1', 'justify-center' ,'gap-2', 'md:grid-cols-2')
+            //area do nome e telefone
+                const areaClient = document.createElement('div')
+                const h1NameClient = document.createElement('h1')
+                const svgNameClient = document.createElement('div')
+            
+                //classes das divs e h1
+                    areaClient.classList.add('flex', 'gap-2', 'items-center')
+                
+                // elementos do innerhtml
+                    h1NameClient.innerHTML = "Adrian Raul Ribeiro"
+                    svgNameClient.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" /></svg>'
+
+                // MONTANDO ESTRUTURA PLACA E STATUS
+                    areaClient.appendChild(svgNameClient)
+                    areaClient.appendChild(h1NameClient)
+                
+            //area de status e placa
+                const areaPhone = document.createElement('div')
+                const h1PhoneClient = document.createElement('h1')
+                const svgPhoneClient = document.createElement('div')
+
+                //classes da area de nome e telefone
+                    areaPhone.classList.add('flex', 'gap-2', 'items-center')
+                    h1PhoneClient.innerHTML = "47991076484"
+                    svgPhoneClient.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" /></svg>'
+            
+                // MONTANDO ESTRUTURA nome e telefone
+                    areaPhone.appendChild(svgPhoneClient)
+                    areaPhone.appendChild(h1PhoneClient)
+               
+
+            // AREA DA PLACA E STATUS
+                const areaClienteTwo = document.createElement('div')
+                areaClienteTwo.classList.add('grid', 'grid-cols-1', 'justify-center' ,'gap-2', 'md:grid-cols-2')
+                //area da placa
+                const areaPlate = document.createElement('div')
+                const svgPlate = document.createElement('div')
+                const h1Plate =document.createElement('div')
+
+                // classe da area da placa
+                areaPlate.classList.add('flex', 'gap-2', 'items-center')
+
+                //Dados e estrutura area da placa
+                svgPlate.innerHTML ='<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" /></svg>'
+                h1Plate.innerHTML ="MLR5B18"
+
+                areaPlate.appendChild(svgPlate)
+                areaPlate.appendChild(h1Plate)
+        
+             
+            // area de status
+                const areaStatus = document.createElement('div')
+                const areaStatusColor = document.createElement('div')
+                const svgStatus = document.createElement('div')
+                const h1Status = document.createElement('h1')
+            
+             // classe da area da placa
+                areaStatus.classList.add('p-1', 'flex', 'gap-2', 'items-center')
+                areaStatusColor.classList.add('bg-yellow-500', 'p-2', 'rounded-xl', 'flex', 'items-center', 'gap-2')
+                
+            
+            // Dados e estrutura area da placa
+                svgStatus.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /> </svg'
+                h1Status.innerHTML ="Pendente"
+
+                areaStatusColor.appendChild(svgStatus)
+                areaStatusColor.appendChild(h1Status)
+                areaStatus.appendChild(areaStatusColor)
+               
+            // ESTRUTURA GERAL DESSA AREA
+                clientAreaOne.appendChild(areaClient)
+                clientAreaOne.appendChild(areaPhone)
+                areaClienteTwo.appendChild(areaPlate)
+                areaClienteTwo.appendChild(areaStatus)
+
+                dateClient.appendChild(clientAreaOne)
+                dateClient.appendChild(areaClienteTwo)
+                dateClientArea.appendChild(dateClient)
+        
+        // Fotos Vistoria
+
+
+        // ações
+            const areaAcoe = document.createElement('div')
+
+            const areaAcoeOne = document.createElement('div')
+            const svgAcoeTitle = document.createElement ('div')
+            const h1AcoeTitle = document.createElement('h1')
+
+            const areaAcoeTwo = document.createElement('div')
+
+            const areaAcoeBtn = document.createElement('div')
+            const svgAcoeBtn = document.createElement('div')
+            const h1AcoeBtn = document.createElement('h1')
+
+            const areaAcoeBtn2 = document.createElement('div')
+            const svgAcoeBtn2 = document.createElement('div')
+            const h1AcoeBtn2 = document.createElement('h1')
+
+        // classes das divs pais
+            areaAcoe.classList.add('flex', 'flex-col', 'gap-5', 'p-5'),
+            areaAcoeOne.classList.add('flex', 'items-center', 'gap-2'),
+            areaAcoeTwo.classList.add('grid', 'grid-cols-1', 'gap-2', 'sm:flex'),
+            areaAcoeBtn.classList.add('flex', 'items-center', 'gap-2', 'bg-green-700/50', 'rounded-xl', 'p-2', 'cursor-pointer', 'sm:w-50'),
+            areaAcoeBtn2.classList.add('flex', 'items-center', 'gap-2', 'bg-red-600/50', 'rounded-xl', 'p-2', 'cursor-pointer', 'sm:w-50'),
+        // dados daareaAcoeOne
+            svgAcoeTitle.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">                         <path stroke-linecap="round" stroke-linejoin="round" d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 0 1 1.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.559.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.894.149c-.424.07-.764.383-.929.78-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 0 1-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.398.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 0 1-.12-1.45l.527-.737c.25-.35.272-.806.108-1.204-.165-.397-.506-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.108-1.204l-.526-.738a1.125 1.125 0 0 1 .12-1.45l.773-.773a1.125 1.125 0 0 1 1.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894Z" /> <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /></svg>'
+            h1AcoeTitle.innerHTML ='Ações:'
+
+            h1AcoeBtn.innerHTML="Confirmar Vistoria"
+            svgAcoeBtn.innerHTML ='<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 stroke-green-600">           <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />                  </svg>'
+            
+            svgAcoeBtn2.innerHTML ='<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 stroke-red-500">                       <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />                   </svg>'
+            h1AcoeBtn2.innerHTML ='Cancelar Vistoria:'
+        
+        //estrutura divs 
+            //titulo
+            areaAcoeOne.appendChild(svgAcoeTitle)
+            areaAcoeOne.appendChild(h1AcoeTitle)
+            //botões
+            areaAcoeBtn.appendChild(svgAcoeBtn)
+            areaAcoeBtn.appendChild(h1AcoeBtn)
+            areaAcoeBtn2.appendChild(svgAcoeBtn2)
+            areaAcoeBtn2.appendChild(h1AcoeBtn2)
+
+            //areas gerais
+            areaAcoeTwo.appendChild(areaAcoeBtn)
+            areaAcoeTwo.appendChild(areaAcoeBtn2)
+            
+            areaAcoe.appendChild(areaAcoeOne)
+            areaAcoe.appendChild(areaAcoeTwo)
+
+        //estrutura divs pai e mae
+            pai.appendChild(mae);
+            mae.appendChild(cabecalho);
+            mae.appendChild(bordaCabecalho);
+            mae.appendChild(dateClientArea);
+            mae.appendChild(areaAcoe)
+
+        //estrutura do modal
+            dialog?.appendChild(pai)
+    }   
