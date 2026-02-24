@@ -148,10 +148,13 @@ export const dashBord = function plate(){
                                 <h1>MLR5B18</h1>
                             </div>
                             <div class="p-1 flex gap-2 items-center" >
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                                </svg>
-                                <h1>Pendente</h1>
+                                <div class="bg-yellow-500 p-2 rounded-xl flex items-center gap-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                    </svg
+                                    <h1>Pendente</h1>
+                                </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -166,7 +169,7 @@ export const dashBord = function plate(){
                     </div>
                     <div class="grid grid-cols-1 overflow-y-scroll h-[30dvh] gap-3 p-4 sm:grid-cols-3 md:grid-cols-4 ">
                         <div class="flex flex-col pb-2 items-center justify-between bg-sky-950 rounded-2xl">
-                            <img class="rounded-tr-xl rounded-tl-xl" src="https://quatrorodas.abril.com.br/wp-content/uploads/2023/06/1FLP00991.jpg?quality=70&strip=info&w=1280&h=720&crop=1"/>
+                            <img src=""/>
                             <h1 class="text-white" >Frente</h1>
                         </div>
                          <div class="flex flex-col pb-2 items-center justify-between bg-sky-950 rounded-2xl">
