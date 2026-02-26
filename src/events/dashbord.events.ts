@@ -1,21 +1,9 @@
-import { dataModal, menu } from "../services/dashbord";
+import { carregarUsuario, menu } from "../services/dashbord";
 import { goGerarLink} from "../services/dashbord"; 
 import { close } from "../services/dashbord";
+import { auth } from "../services/firebase";
 
-export function modalEvents(){
-    const modal = document.querySelector('#modal') as HTMLDialogElement | null
-    if(!modal) return
 
-    document.addEventListener('click', (event)=>{
-        const element  = event.target as HTMLElement
-
-        if(element.closest(".open")){
-            modal.showModal()
-            dataModal()
-            modal.classList.add('flex')
-        }
-    })
-}
 
 export function closeModal(){
     const modal = document.querySelector('#modal') as HTMLDialogElement | null
@@ -28,6 +16,31 @@ export function closeModal(){
     })
     
 }
+export async function getId() {
+    const modal = document.querySelector('#modal') as HTMLDialogElement | null
+    if(!modal) return
+
+    const user = auth.currentUser
+    if (!user) return;
+   
+    
+    document.addEventListener('click', (event) => {
+        const target = event.target as HTMLElement
+        const trigger = target.closest('.open') as HTMLElement | null
+        if (!trigger) return
+
+        const userId = trigger.dataset.userId
+        if(!userId) return
+
+        const users = userId
+        carregarUsuario(users)
+       
+    })
+    
+}
+
+
+
 export function openMenu(){
     document.querySelector('#menuarea')?.addEventListener('click', menu)
     document.querySelector('#link')?.addEventListener('click', goGerarLink)

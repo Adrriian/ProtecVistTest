@@ -44,7 +44,7 @@ export async function gerarLink(){
                 client: name,
                 plate: plate,
                 clientTelefone: telefone,
-                status: "pendente",
+                status: "Pendente",
                 criadoEm: date,
                 fotos: 
                 [   {placa:""},

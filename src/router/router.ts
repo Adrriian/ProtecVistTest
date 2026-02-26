@@ -12,12 +12,12 @@ import {changePasswordEvents} from '../events/changePassword.events'
 import {loginEvents} from '../events/login.router.events'
 import {showpassword} from '../events/register.events'
 import {btnRegister} from '../events/register.events'
-import { closeModal, openMenu } from '../events/dashbord.events'
+//import { closeModal} from '../events/dashbord.events'
 import { vistLink } from '../events/vist'
 import { checkRender } from '../services/auth/requireFullAccess'
 import { show } from '../services/dashbord' 
-import { changeColor } from "../services/dashbord";
-import { modalEvents } from "../events/dashbord.events";
+import { changeColor} from "../services/dashbord";
+import { openMenu,getId } from "../events/dashbord.events";
 import { toUpperCase } from '../events/gerarlink.events'
 //variavel do main
 export let app = document.querySelector('.app') as HTMLElement
@@ -46,8 +46,8 @@ export function renderRouter(url:string, path = true){
                openMenu()
                show()
                changeColor()
-               modalEvents()
-               closeModal()
+               getId()
+          
             })
         break;
         case '/link':

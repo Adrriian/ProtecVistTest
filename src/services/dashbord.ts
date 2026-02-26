@@ -8,6 +8,7 @@ import {
 } from "firebase/firestore";
 import { db } from './firebase'
 import {auth} from './firebase'
+import { closeModal} from '../events/dashbord.events';
 
 
 
@@ -24,6 +25,7 @@ type VistoriaData = {
   fotos: string[];
 };
 
+// função de abrir e fechar menu
 export function menu(){
     let menuArea = document.querySelector('#bar') as HTMLDivElement
     let bluer = document.querySelector('#bluer') as HTMLDivElement
@@ -43,9 +45,18 @@ export function close(){
          
     }
 }
-
+// função de ir para a page de gera link
 export function goGerarLink(){
     renderRouter('/link')
+}
+//função de abrir o modal
+export function showModal() {
+    const modal = document.querySelector('#modal') as HTMLDialogElement | null
+    if(!modal) return
+
+    modal.classList.add('flex')
+    modal.showModal()
+    
 }
 
 export async function changeColor(){
@@ -88,6 +99,7 @@ export async function changeColor(){
     
 }
 
+//funções de exibir os dados
 export async function show(){
     const user = auth.currentUser;
 
@@ -99,10 +111,9 @@ export async function show(){
     const q = query(vistoriaRef,where("userUid", "==", uid))
 
     const data = await getDocs(q)
-
+  
    
     const dados = data.docs.map(doc =>({id:doc.id,  ...(doc.data() as Omit<VistoriaData, "id">)}));
-    console.log(dados)
 
     let showDiv = document.querySelector('#showDiv') as HTMLDivElement
 
@@ -179,8 +190,40 @@ export async function show(){
 
 }
 
-export function dataModal(){
-        const dialog = document.querySelector('#modal')
+//funções de renderização do modal e seu dados
+export async function getDadosUser(users:string) {
+    
+    
+    const user = auth.currentUser;
+
+    if (!user) return;
+
+    const uid = user.uid;
+
+    const vistoriaRef = collection(db, 'consultores',uid,"clientes")
+    const data = await getDocs(vistoriaRef)
+
+    const dados = data.docs.map(doc => ({
+        id: doc.id,
+        ...(doc.data() as Omit<VistoriaData, "id">)
+    }))
+
+    const cliente:any = dados.find(c => c.id === users)
+    
+    dataModal(cliente)
+}
+
+export async function carregarUsuario(users: string) {
+    getDadosUser(users)
+  
+    
+}
+
+export async function dataModal(cliente:any){
+        const dialog = document.querySelector('#modal') as HTMLDialogElement | null
+        if (!dialog) return
+
+        dialog.innerHTML = ''
        // div pai e div mãe
             const pai = document.createElement('div')
             const mae = document.createElement('div')
@@ -202,7 +245,7 @@ export function dataModal(){
             bordaCabecalho.classList.add('border-b', 'border-gray-300', 'mt-1')
             svgCabecalho.classList.add('close')
         //dados cabeçalho
-            h1Cabecalho.innerHTML = "nome do cliente"
+            h1Cabecalho.textContent  = "clientes.client"
             svgCabecalho.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 bg-white stroke-slate-900 rounded-2xl cursor-pointer"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" /> </svg>'
 
         //estrutura cabeçalho
@@ -247,7 +290,7 @@ export function dataModal(){
                     areaClient.classList.add('flex', 'gap-2', 'items-center')
                 
                 // elementos do innerhtml
-                    h1NameClient.innerHTML = "Adrian Raul Ribeiro"
+                    h1NameClient.innerText  = cliente.client
                     svgNameClient.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" /></svg>'
 
                 // MONTANDO ESTRUTURA PLACA E STATUS
@@ -261,7 +304,7 @@ export function dataModal(){
 
                 //classes da area de nome e telefone
                     areaPhone.classList.add('flex', 'gap-2', 'items-center')
-                    h1PhoneClient.innerHTML = "47991076484"
+                    h1PhoneClient.innerText = cliente.clientTelefone
                     svgPhoneClient.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" /></svg>'
             
                 // MONTANDO ESTRUTURA nome e telefone
@@ -282,7 +325,7 @@ export function dataModal(){
 
                 //Dados e estrutura area da placa
                 svgPlate.innerHTML ='<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" /></svg>'
-                h1Plate.innerHTML ="MLR5B18"
+                h1Plate.innerText = cliente.plate
 
                 areaPlate.appendChild(svgPlate)
                 areaPlate.appendChild(h1Plate)
@@ -300,8 +343,8 @@ export function dataModal(){
                 
             
             // Dados e estrutura area da placa
-                svgStatus.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /> </svg'
-                h1Status.innerHTML ="Pendente"
+                svgStatus.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg'
+                h1Status.innerText = cliente.status
 
                 areaStatusColor.appendChild(svgStatus)
                 areaStatusColor.appendChild(h1Status)
@@ -416,5 +459,7 @@ export function dataModal(){
             mae.appendChild(areaAcoe)
 
         //estrutura do modal
-            dialog?.appendChild(pai)
+        dialog?.appendChild(pai)
+        showModal()
+        closeModal()
     }   
