@@ -361,7 +361,8 @@ export async function dataModal(cliente:any){
                 dateClientArea.appendChild(dateClient)
         
         // Fotos Vistoria
-
+            const fotos = cliente.fotos
+            console.log(fotos)
             const areaVist = document.createElement('div')
             
             const areaVistTitle = document.createElement('div')
@@ -374,18 +375,87 @@ export async function dataModal(cliente:any){
             const h1VistPhoto = document.createElement('h1')
         
         //classes
-            areaVist.classList.add('flex', 'flex-col', 'p-5', 'gap-5')
-
-            areaVistTitle.classList.add('flex', 'gap-3', 'items-center')
-            svgVistTitle.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4"><path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 0 1 5.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 0 0-1.134-.175 2.31 2.31 0 0 1-1.64-1.055l-.822-1.316a2.192 2.192 0 0 0-1.736-1.039 48.774 48.774 0 0 0-5.232 0 2.192 2.192 0 0 0-1.736 1.039l-.821 1.316Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0ZM18.75 10.5h.008v.008h-.008V10.5Z" /></svg>'
-            h1VistTitle.innerHTML = "Fotos da Vistoria"
-
-            areaVistPhoto.classList.add('grid', 'grid-cols-1', 'overflow-y-scroll', )
-            vistPhoto.classList.add('flex', 'flex-col', 'items-center', 'bg-gray-700', 'w-30', 'h-30', 'rounded-2xl','cursor-pointer')
-            imgVistPhoto.classList.add( 'h-20')
             
 
-            h1VistPhoto.innerHTML="Frente"
+            const ORDEM_FOTOS = [
+                { key:"Placa", label:"Placa"},
+                { key: "frente", label: "Frente" },
+                { key: "frente_lado_direito", label: "Frente Lado Direito" },
+                { key: "farol_lado_direito", label: "Farol Lado Direito" },
+                { key: "retrovisor_lado_direito", label: "Retrovisor Lado Direito" },
+                { key: "pneu_lado_direito", label: "Pneu Lado Direito" },
+                { key: "frente_lado_esquerda", label:"Frente Lado Esquerdo"},
+                { key:"Farol_lado_esquerdo", label:"Farol Lado Esquerdo"},
+                { key:"Retrovisor_lado_esquerdo", label:"Retrovisor Lado Esquerdo"},
+                { key:"Pneu_lado_esquerdo", label:"Pneu Lado Esquerdo"},
+                { key:"traseira", label:"Traseira"},
+                { key:"traseira_lado_direito", label:"Traseira Lado Direito"},
+                { key:"Farol_Traseiro_direito", label:"Farol Lado Direito"},
+                { key:"Pneu_Traseiro_direito", label:"Pneu Lado Direito"},
+                { key:"traseira_lado_esquerdo", label:"Traseira Lado Esquerdo"},
+                { key:"Farol_Traseiro_esquerdo", label:"Farol Lado Esquerdo"},
+                { key:"Pneu_Traseiro_esquerdo", label:"Pneu Lado Esquerdo"},
+                { key:"Porta_aberta", label:"Porta Aberta"},
+                { key:"Kilometragem", label:"Kilometragem"},
+                { key:"Parabrisa", label:"Parabrisa"},
+                { key:"Motor", label:"Motor"},
+                { key:"Chassi", label:"Chassi"},
+                // ... até 21
+            ] as const
+            
+            const fotosRender = ORDEM_FOTOS.map(foto => ({
+                tipo: foto.key,
+                label: foto.label,
+                link: fotos?.[foto.key] || ""
+            }))
+            areaVistPhoto.classList.add(
+                'grid',
+                'grid-cols-1',
+                'gap-4',
+                'p-4',
+                'h-80',
+                'overflow-y-scroll',
+                'scrollbar-hide',
+                'sm:grid-cols-3',
+                'md:grid-cols-4',
+                'lg:grid-cols-4'
+                )
+
+                fotosRender.forEach(foto => {
+                const vistPhoto = document.createElement('div')
+                const imgVistPhoto = document.createElement('img')
+                const h1VistPhoto = document.createElement('h1')
+
+                vistPhoto.classList.add(
+                    'flex',
+                    'flex-col',
+                    'items-center',
+                    'bg-gray-700',
+                    'rounded-xl',
+                    'w-40',
+                    'cursor-pointer'
+                )
+
+                h1VistPhoto.innerText = foto.label
+                h1VistPhoto.classList.add('text-sm', 'mt-2' ,'mb-2')
+
+                if (foto.link) {
+                    imgVistPhoto.src = foto.link
+                    imgVistPhoto.classList.add('h-20','w-full', 'object-cover' , 'rounded-tl-xl','rounded-tr-xl')
+                } else {
+                    imgVistPhoto.classList.add(
+                    'h-20',
+                    'w-full',
+                    'bg-gray-500','rounded-tl-xl','rounded-tr-xl'
+                    )
+                    
+                }
+
+                vistPhoto.appendChild(imgVistPhoto)
+                vistPhoto.appendChild(h1VistPhoto)
+                areaVistPhoto.appendChild(vistPhoto)
+            })
+            
         
         //Estrutura
 
