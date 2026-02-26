@@ -409,13 +409,16 @@ export async function dataModal(cliente:any){
                 link: fotos?.[foto.key] || ""
             }))
             areaVistPhoto.classList.add(
-                'grid',
-                'grid-cols-1',
+                'flex',
+                'flex-col',
                 'gap-4',
                 'p-4',
+                'justify-center', 
+                'items-center',
                 'h-80',
                 'overflow-y-scroll',
                 'scrollbar-hide',
+                'sm:grid',
                 'sm:grid-cols-3',
                 'md:grid-cols-4',
                 'lg:grid-cols-4'
