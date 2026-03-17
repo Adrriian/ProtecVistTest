@@ -20,7 +20,7 @@ export default function AppRoutes({user}: any) {
 
       <Routes>
 
-        <Route path="/" element={<Vistoria />} />
+        <Route path="/" element={<Dashboard />} />
 
         <Route 
           path="/dashboard"

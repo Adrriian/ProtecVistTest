@@ -83,7 +83,7 @@ export async function Register() {
 
     const telefone = telefoneValue.replace(/\D/g, "");
 
-    const link = `https://seusite.netlify.app/vistoria/${docRef.id}`;
+    const link = `https://protecvisttest.netlify.app/vistoria/${docRef.id}`;
 
     const mensagem = `Olá ${nameValue}! Sua vistoria foi criada. Acesse pelo link: ${link}`;
 
