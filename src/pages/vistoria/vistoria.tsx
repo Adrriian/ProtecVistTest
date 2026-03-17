@@ -37,7 +37,7 @@ export function Vistoria() {
 
   return (
     <div>
-      <button onClick={abrirCamera}>Abrir Câmera</button>
+      <button className="bg-white text-black" onClick={abrirCamera}>Abrir Câmera</button>
       <video ref={videoRef} style={{ width: "100%", maxWidth: 400 }} />
       <button onClick={tirarFoto}>Tirar Foto</button>
       <canvas ref={canvasRef} style={{ display: "none" }} />
