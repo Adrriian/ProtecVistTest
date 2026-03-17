@@ -1,0 +1,21 @@
+☀️ Light Mode
+Uso	Cor	Hex	Tailwind
+Background principal	Cinza muito claro	#F8FAFC	bg-slate-50
+Card / superfícies	Branco	#FFFFFF	bg-white
+Texto principal	Cinza escuro	#0F172A	text-slate-900
+Texto secundário	Cinza médio	#64748B	text-slate-500
+Bordas	Cinza claro	#E2E8F0	border-slate-200
+Primária	Roxo	#7C3AED	bg-violet-600
+Hover	Roxo escuro	#6D28D9	hover:bg-violet-700
+Input fundo	Cinza claro	#F1F5F9	bg-slate-100
+
+🌙 Dark Mode
+Uso	Cor	Hex	Tailwind
+Background principal	Quase preto	#020617	bg-slate-950
+Card / superfícies	Azul escuro	#0F172A	bg-slate-900
+Texto principal	Branco suave	#F1F5F9	text-slate-100
+Texto secundário	Cinza claro	#CBD5F5	text-slate-300
+Bordas	Cinza escuro	#334155	border-slate-700
+Primária	Roxo	#8B5CF6	bg-violet-500
+Hover	Roxo claro	#7C3AED	hover:bg-violet-600
+Input fundo	Cinza escuro	#1E293B	bg-slate-800

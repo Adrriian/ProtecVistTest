@@ -1,5 +1,0 @@
-Modal
-- preciso então fazer uma função só para estrutura ok
-- quando clicar no user para abrir o modal preicso pegar o id dele ok
-- preciso ver se o usuario logado existe ok
-- depois que pegar o id dele preciso fazer um find para saber se esse id tem no usuario
