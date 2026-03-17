@@ -1,7 +1,9 @@
 // Camera.tsx
 import { useRef, useState } from "react";
+import { atulizarTheme } from "../../util/themeLocalStorage";
 
 export function Vistoria() {
+  atulizarTheme()
   const videoRef = useRef<HTMLVideoElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [foto, setFoto] = useState<string | null>(null);
