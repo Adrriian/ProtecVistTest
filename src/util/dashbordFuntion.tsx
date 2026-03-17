@@ -1,4 +1,4 @@
-import { collection, doc, getDocs, query, updateDoc, where } from "firebase/firestore";
+import { collection, deleteDoc, doc, getDocs, query, updateDoc, where } from "firebase/firestore";
 import { auth, db } from "../config/firebase.config";
 import type { VistoriaData } from "../types/list";
 export function navigateToRegister(navigate: any) {
@@ -169,6 +169,37 @@ export async function showDados() {
     }
 
 }
+async function handleDeleteClient(id: string) {
+    const modal = document.querySelector('#modal') as HTMLDialogElement | null
+    if (!modal) return
+    const close = document.querySelector('.close') as HTMLElement
+    
+    const confirmDelete = window.confirm("Tem certeza que deseja excluir?");
+    if (!confirmDelete) return;
+
+    try {
+        const user = auth.currentUser;
+
+        if (!user) {
+            alert("Usuário não autenticado");
+            return;
+        }
+
+        await deleteDoc(
+            doc(db, "consultores", user.uid, "clientes", id)
+        );
+
+        alert("Cliente excluído com sucesso!");
+    } catch (error) {
+        console.error("Erro ao excluir:", error);
+        alert("Erro ao excluir cliente");
+    }
+    modal.close()
+    modal.classList.remove('flex')
+    showDados()
+   
+}
+
 
 //função que renderiza o modal aberto
 export async function dataModal(cliente: any) {
@@ -267,7 +298,7 @@ export async function dataModal(cliente: any) {
 
     // AREA DA PLACA E STATUS
     const areaClienteTwo = document.createElement('div')
-    areaClienteTwo.classList.add('grid', 'grid-cols-1', 'justify-center', 'gap-2', 'md:grid-cols-2')
+    areaClienteTwo.classList.add('grid', 'grid-cols-1', 'justify-center', 'gap-2', 'md:grid-cols-3', 'md:gap-10')
     //area da placa
     const areaPlate = document.createElement('div')
     const svgPlate = document.createElement('div')
@@ -312,17 +343,34 @@ export async function dataModal(cliente: any) {
         svgStatus.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" /></svg>'
         areaStatusColor.classList.add('bg-red-500', 'p-2', 'rounded-xl', 'flex', 'items-center', 'justifu-center', 'gap-2', 'w-30')
     }
+
+    //area delete
+    const areaDelete = document.createElement('div')
+    const svgDelete = document.createElement('div')
+
+    //classe
+    areaDelete.id = 'areaDelete'
+    areaDelete.classList.add('flex', 'gap-2', 'items-center', 'cursor-pointer')
+    svgDelete.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" /></svg>'
+
+    areaDelete.appendChild(svgDelete)
+    areaDelete.onclick = () => {
+        handleDeleteClient(cliente.id);
+    };
+
     // função
 
     areaStatusColor.appendChild(svgStatus)
     areaStatusColor.appendChild(h1Status)
     areaStatus.appendChild(areaStatusColor)
+    areaStatus.appendChild(areaDelete)
 
     // ESTRUTURA GERAL DESSA AREA
     clientAreaOne.appendChild(areaClient)
     clientAreaOne.appendChild(areaPhone)
     areaClienteTwo.appendChild(areaPlate)
     areaClienteTwo.appendChild(areaStatus)
+    areaClienteTwo.appendChild(areaDelete)
 
     dateClient.appendChild(clientAreaOne)
     dateClient.appendChild(areaClienteTwo)
@@ -496,7 +544,7 @@ export async function dataModal(cliente: any) {
             status: "Feito"
         })
         alert('Vistoria Feita com Sucesso')
-         showDados()
+        showDados()
         h1Status.innerText = 'Feito'
         areaStatusColor.classList.remove('bg-yellow-500', 'p-2', 'rounded-xl', 'flex', 'items-center', 'justifu-center', 'gap-2', 'w-30')
         areaStatusColor.classList.remove('bg-red-500', 'p-2', 'rounded-xl', 'flex', 'items-center', 'justifu-center', 'gap-2', 'w-30')
