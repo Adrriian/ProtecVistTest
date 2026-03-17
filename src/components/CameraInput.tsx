@@ -23,7 +23,7 @@ export default function CameraInput({ onCapture }: Props) {
     <input
       type="file"
       accept="image/*"
-      capture="camera" // Aqui garantimos que a câmera será aberta
+      // Aqui garantimos que a câmera será aberta
       onChange={handleFoto}
       className="border p-2 rounded"
     />
