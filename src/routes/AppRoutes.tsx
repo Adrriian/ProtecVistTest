@@ -8,7 +8,7 @@ import { UserSettings } from "../pages/configUser/config"
 
 import ProtectedRoute from "./ProtectedRoute"
 import { DashboardClientes } from "../pages/dashbord-de-clientes/dashbordClientes"
-import Vistoria  from "../pages/vistoria/Vistoria"
+import Vistoria  from "../pages/vistoria/vistoria"
 import { atulizarTheme } from "../util/themeLocalStorage"
 
 export default function AppRoutes({user}: any) {

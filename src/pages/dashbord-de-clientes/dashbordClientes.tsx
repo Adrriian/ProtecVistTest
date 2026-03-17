@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { Trocartema } from "../../components/thema.Mode";
-import { getId, menu, navigateToRegister, navigateToUserSettings, showDados,close, navigateToUserClientes } from "../../util/dashbordFuntion";
+import { getId, menu, navigateToRegister, navigateToUserSettings, showDados,close } from "../../util/dashbordFuntion";
 import { auth } from "../../config/firebase.config";
 import { useEffect, useState } from "react";
 import { buscarDadosDoUsuario } from "../../util/configUserFunction";
