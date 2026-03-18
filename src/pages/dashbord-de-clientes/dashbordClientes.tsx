@@ -1,12 +1,14 @@
 import { useNavigate } from "react-router-dom";
 import { Trocartema } from "../../components/thema.Mode";
-import { getId, menu, navigateToRegister, navigateToUserSettings, showDados,close } from "../../util/dashbordFuntion";
+import { getId, showDados, } from "../../services/dashbordFuntion";
 import { auth } from "../../config/firebase.config";
 import { useEffect, useState } from "react";
-import { buscarDadosDoUsuario } from "../../util/configUserFunction";
+import { buscarDadosDoUsuario } from "../../services/configUserFunction";
 import type { User } from "../../types/users";
-import { atulizarTheme } from "../../util/themeLocalStorage";
-import { navigateToDashbord } from "../../util/dashbordAssociado";
+import { atulizarTheme } from "../../services/themeLocalStorage";
+import { navigateToDashbord, navigateToUserSettings } from "../../services/fuctionNavigates";
+import { menu } from "../../services/openCLoseMenu";
+
 
 export function DashboardClientes() {
     showDados()

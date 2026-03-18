@@ -1,6 +1,6 @@
 
-import { changePlate, Register } from "../../util/registerFunction";
-import { atulizarTheme } from "../../util/themeLocalStorage";
+import { changePlate, Register } from "../../services/registerFunction";
+import { atulizarTheme } from "../../services/themeLocalStorage";
 
 export function RegisterUser() {
    atulizarTheme()

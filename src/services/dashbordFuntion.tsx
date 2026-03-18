@@ -3,6 +3,7 @@ import { auth, db } from "../config/firebase.config";
 import type { VistoriaData } from "../types/list";
 import JSZip from "jszip";
 import { saveAs } from "file-saver";
+import { closeModal, showModal } from "./showCloseModal";
 
 
 export async function baixarZipFromRender(fotos:any[]) {
@@ -25,45 +26,36 @@ export async function baixarZipFromRender(fotos:any[]) {
   const conteudo = await zip.generateAsync({ type: "blob" });
   saveAs(conteudo, "vistoria.zip");
 }
-export function navigateToRegister(navigate: any) {
-    navigate("/RegisterUser")
-
-}
-
-export function menu() {
-    let menuArea = document.querySelector('#bar') as HTMLDivElement
-    let bluer = document.querySelector('#bluer') as HTMLDivElement
-
-    if (menuArea.style.width !== "0px" || menuArea.style.width === "0px") {
-        menuArea.style.width = '300px'
-        bluer.style.filter = 'blur(5px)'
-    }
-}
-export function close() {
-    let menuArea = document.querySelector('#bar') as HTMLDivElement
-    let bluer = document.querySelector('#bluer') as HTMLDivElement
-
-    if (menuArea.style.width === "300px") {
-        menuArea.style.width = "0px"
-        bluer.style.filter = 'blur(0px)'
-
-    }
-}
-export function navigateToUserSettings(navigate: any) {
-    navigate("/UserSettings")
-
-}
-export function navigateToUserClientes(navigate: any) {
-    navigate("/Clientes")
-}
-export function showModal() {
+export async function handleDeleteClient(id: string) {
     const modal = document.querySelector('#modal') as HTMLDialogElement | null
     if (!modal) return
+    
+    const confirmDelete = window.confirm("Tem certeza que deseja excluir?");
+    if (!confirmDelete) return;
 
-    modal.classList.add('flex')
-    modal.showModal()
+    try {
+        const user = auth.currentUser;
+
+        if (!user) {
+            alert("Usuário não autenticado");
+            return;
+        }
+
+        await deleteDoc(
+            doc(db, "consultores", user.uid, "clientes", id)
+        );
+
+        alert("Cliente excluído com sucesso!");
+    } catch (error) {
+        console.error("Erro ao excluir:", error);
+        alert("Erro ao excluir cliente");
+    }
+    modal.close()
+    modal.classList.remove('flex')
+    showDados()
 
 }
+
 export async function getId() {
     const modal = document.querySelector('#modal') as HTMLDialogElement | null
     if (!modal) return
@@ -86,17 +78,10 @@ export async function getId() {
     })
 
 }
-export function closeModal() {
-    const modal = document.querySelector('#modal') as HTMLDialogElement | null
-    if (!modal) return
-    const close = document.querySelector('.close') as HTMLElement
 
-    close.addEventListener('click', () => {
-        modal.close()
-        modal.classList.remove('flex')
-    })
 
-}
+
+
 export async function showDados() {
     const user = auth.currentUser;
 
@@ -194,36 +179,7 @@ export async function showDados() {
     }
 
 }
-async function handleDeleteClient(id: string) {
-    const modal = document.querySelector('#modal') as HTMLDialogElement | null
-    if (!modal) return
-    const close = document.querySelector('.close') as HTMLElement
 
-    const confirmDelete = window.confirm("Tem certeza que deseja excluir?");
-    if (!confirmDelete) return;
-
-    try {
-        const user = auth.currentUser;
-
-        if (!user) {
-            alert("Usuário não autenticado");
-            return;
-        }
-
-        await deleteDoc(
-            doc(db, "consultores", user.uid, "clientes", id)
-        );
-
-        alert("Cliente excluído com sucesso!");
-    } catch (error) {
-        console.error("Erro ao excluir:", error);
-        alert("Erro ao excluir cliente");
-    }
-    modal.close()
-    modal.classList.remove('flex')
-    showDados()
-
-}
 
 
 //função que renderiza o modal aberto

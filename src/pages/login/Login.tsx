@@ -1,8 +1,9 @@
 import { Trocartema } from "../../components/thema.Mode";
 import { useState } from "react"
-import { changePassword, login, loginGO } from "../../util/functionLogin";
+import { login, loginGO } from "../../services/functionLogin";
 import { useNavigate } from "react-router-dom";
-import { atulizarTheme } from "../../util/themeLocalStorage";
+import { atulizarTheme } from "../../services/themeLocalStorage";
+import { changePassword } from "../../services/fuctionNavigates";
 
 export default function PageLogin() {
   atulizarTheme()

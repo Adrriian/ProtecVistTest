@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client"
 import { useEffect, useState } from "react"
 
 import AppRoutes from "./routes/AppRoutes"
-import { escutarAuth } from "./util/userLogadoFuntion"
+import { escutarAuth } from "./services/userLogadoFuntion"
 
 import "./index.css"
 

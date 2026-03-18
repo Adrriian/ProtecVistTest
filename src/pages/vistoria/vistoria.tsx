@@ -1,6 +1,6 @@
 // Camera.tsx
 import { useRef, useState } from "react";
-import { atulizarTheme } from "../../util/themeLocalStorage";
+import { atulizarTheme } from "../../services/themeLocalStorage";
 
 export function Vistoria() {
   atulizarTheme()

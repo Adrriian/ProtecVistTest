@@ -71,6 +71,3 @@ export async function loginGO(navigate:any){
 
 
 }
-export async function changePassword(navigate:any) {
-    navigate("/ChangePassword")
-}

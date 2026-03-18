@@ -1,6 +1,6 @@
 import { Trocartema } from "../../components/thema.Mode";
-import { changePassword } from "../../util/changeFunctionPassword";
-import { atulizarTheme } from "../../util/themeLocalStorage";
+import { changePassword } from "../../services/changeFunctionPassword";
+import { atulizarTheme } from "../../services/themeLocalStorage";
 
 export function ChangePassword() {
    atulizarTheme()

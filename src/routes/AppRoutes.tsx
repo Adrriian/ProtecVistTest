@@ -9,11 +9,11 @@ import { UserSettings } from "../pages/configUser/config"
 import ProtectedRoute from "./ProtectedRoute"
 import { DashboardClientes } from "../pages/dashbord-de-clientes/dashbordClientes"
 
-import { atulizarTheme } from "../util/themeLocalStorage"
+import { atulizarTheme } from "../services/themeLocalStorage"
 import { Vistoria } from "../pages/vistoria/vistoria"
 
-export default function AppRoutes({user}: any) {
- atulizarTheme()
+export default function AppRoutes({ user }: any) {
+  atulizarTheme()
   return (
 
     <BrowserRouter>
@@ -22,54 +22,54 @@ export default function AppRoutes({user}: any) {
 
         <Route path="/" element={<PageLogin />} />
 
-        <Route 
+        <Route
           path="/dashboard"
           element={
             <ProtectedRoute user={user}>
-              <Dashboard/>
+              <Dashboard />
             </ProtectedRoute>
           }
         />
 
-        <Route 
+        <Route
           path="/UserSettings"
           element={
             <ProtectedRoute user={user}>
-              <UserSettings/>
+              <UserSettings />
             </ProtectedRoute>
           }
         />
 
-        <Route 
+        <Route
           path="/RegisterUser"
           element={
             <ProtectedRoute user={user}>
-              <RegisterUser/>
+              <RegisterUser />
             </ProtectedRoute>
           }
         />
 
-        <Route 
+        <Route
           path="/ChangePassword"
           element={
             <ProtectedRoute user={user}>
-              <ChangePassword/>
+              <ChangePassword />
             </ProtectedRoute>
           }
         />
-        <Route 
+        <Route
           path="/Clientes"
           element={
             <ProtectedRoute user={user}>
-              <DashboardClientes/>
+              <DashboardClientes />
             </ProtectedRoute>
           }
         />
-        <Route 
+        <Route
           path="/Vistoria"
           element={
             <ProtectedRoute user={user}>
-              <Vistoria/>
+              <Vistoria />
             </ProtectedRoute>
           }
         />

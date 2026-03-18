@@ -2,10 +2,10 @@
 import { useEffect, useState } from "react";
 import { ThemaChangeMode } from "../../components/themaChangeMode";
 import { auth } from "../../config/firebase.config";
-import { buscarDadosDoUsuario } from "../../util/configUserFunction";
-import { atualizarDadosDoUsuario } from "../../util/configUserFunction"
+import { buscarDadosDoUsuario } from "../../services/configUserFunction";
+import { atualizarDadosDoUsuario } from "../../services/configUserFunction"
 import type { User } from "../../types/users";
-import { atulizarTheme } from "../../util/themeLocalStorage";
+import { atulizarTheme } from "../../services/themeLocalStorage";
 
 export function UserSettings() {
    atulizarTheme()
