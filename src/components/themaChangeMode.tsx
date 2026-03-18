@@ -1,24 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export function ThemaChangeMode() {
-  const root = document.querySelector('#root') as HTMLDivElement
-  const [tema, setTema] = useState("light");
+  const [tema, setTema] = useState(() => {
+    return localStorage.getItem("tema") || "light";
+  });
 
-  function alterarTema(event: React.ChangeEvent<HTMLSelectElement>) {
-    if (event.target.value === 'Ligth') {
-      setTema('Ligth')
-      localStorage.setItem('tema', 'Ligth')
-      root.classList.remove('dark')
+  useEffect(() => {
+   const root = document.querySelector('#root') as HTMLDivElement
+
+    if (tema === "dark") {
+      root.classList.add("dark");
     } else {
-      setTema('Dark')
-      localStorage.setItem('tema', 'Dark')
-      root.classList.add('dark')
+      root.classList.remove("dark");
     }
 
+    localStorage.setItem("tema", tema);
+  }, [tema]);
+
+  function alterarTema(event: React.ChangeEvent<HTMLSelectElement>) {
+    setTema(event.target.value);
   }
-
-
-
 
   return (
     <div className="mb-6">
@@ -26,12 +27,14 @@ export function ThemaChangeMode() {
         Tema
       </label>
 
-      <select value={tema} onChange={alterarTema}
+      <select
+        value={tema}
+        onChange={alterarTema}
         className="p-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-800 dark:text-white"
-      >   <option value={'Ligth'}>Ligth</option>
-        <option value={'Dark'}>Dark</option>
-
+      >
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
       </select>
     </div>
-  )
+  );
 }
