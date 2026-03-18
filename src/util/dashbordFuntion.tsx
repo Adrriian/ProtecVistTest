@@ -423,7 +423,7 @@ export async function dataModal(cliente: any) {
     const fotos = cliente.fotos
     console.log(fotos)
     const areaVist = document.createElement('div')
-
+    areaVist.classList.add('p-2')
     const areaVistTitle = document.createElement('div')
     const svgVistTitle = document.createElement('div')
     const h1VistTitle = document.createElement('h1')
@@ -470,12 +470,16 @@ export async function dataModal(cliente: any) {
     areaVistPhoto.classList.add(
         'flex',
         'flex-col',
-        'gap-4',
-        'p-4',
+        'gap-5',
         'justify-center',
         'items-center',
+        
+        'p-4',
         'h-80',
+        'border',
+        'border-violet-700',
         'overflow-y-scroll',
+        'rounded-2xl',
         'scrollbar-hide',
         'sm:grid',
         'sm:grid-cols-3',
@@ -495,7 +499,7 @@ export async function dataModal(cliente: any) {
             'bg-gray-700',
             'rounded-xl',
             'w-40',
-            'cursor-pointer'
+            'cursor-pointer',
         )
 
         h1VistPhoto.innerText = foto.label
@@ -560,12 +564,12 @@ export async function dataModal(cliente: any) {
     // classes das divs pais
     areaAcoe.classList.add('grid', 'flex-col', 'gap-5', 'p-5',),
         areaAcoeOne.classList.add('flex', 'items-center', 'gap-2'),
-        areaAcoeTwo.classList.add('grid', 'grid-cols-1', 'gap-2', 'sm:grid-cols-2', 'md:flex'),
+        areaAcoeTwo.classList.add('grid', 'grid-cols-1', 'gap-2', 'sm:grid-cols-2','md:grid-cols-3', 'lg:flex'),
         areaAcoeBtn.classList.add('flex', 'items-center', 'gap-2,' )
-        areaAcoeBtn.classList.add('flex', 'items-center', 'gap-2', 'bg-green-700/50', 'rounded-xl', 'p-2', 'cursor-pointer', 'sm:w-52', 'hover:bg-green-700/100', 'transitio-all', 'duration-300', 'ease-linear'),
-        areaAcoeBtn2.classList.add('flex', 'items-center', 'gap-2', 'bg-red-600/50', 'rounded-xl', 'p-2', 'cursor-pointer', 'sm:w-52','hover:bg-red-600/100', 'transitio-all', 'duration-300', 'ease-linear'),
-        areaAcoeBtn3.classList.add('flex', 'items-center', 'gap-2', 'bg-violet-600/20', 'rounded-xl', 'p-2', 'cursor-pointer', 'sm:w-52','hover:bg-violet-600/100', 'transitio-all', 'duration-300', 'ease-linear'),
-        areaAcoeBtn4.classList.add('flex', 'items-center', 'gap-2', 'bg-blue-600/20', 'rounded-xl', 'p-2', 'cursor-pointer', 'sm:w-52','hover:bg-blue-600/100', 'transitio-all', 'duration-300', 'ease-linear'),
+        areaAcoeBtn.classList.add('flex', 'items-center', 'gap-2', 'bg-green-700/50', 'rounded-xl', 'p-2', 'cursor-pointer', 'sm:w-52', 'hover:bg-green-700/100', 'transitio-all', 'duration-300', 'ease-linear', 'hover:shadow-[0_0_10px_green]'),
+        areaAcoeBtn2.classList.add('flex', 'items-center', 'gap-2', 'bg-red-600/50', 'rounded-xl', 'p-2', 'cursor-pointer', 'sm:w-52','hover:bg-red-600/100', 'transitio-all', 'duration-300', 'ease-linear', 'hover:shadow-[0_0_10px_red]'),
+        areaAcoeBtn3.classList.add('flex', 'items-center', 'gap-2', 'bg-violet-600/20', 'rounded-xl', 'p-2', 'cursor-pointer', 'sm:w-52','hover:bg-violet-600/100', 'transitio-all', 'duration-300', 'ease-linear', 'hover:shadow-[0_0_10px_violet]'),
+        areaAcoeBtn4.classList.add('flex', 'items-center', 'gap-2', 'bg-blue-600/20', 'rounded-xl', 'p-2', 'cursor-pointer', 'sm:w-52','hover:bg-blue-600/100', 'transitio-all', 'duration-300', 'ease-linear', 'hover:shadow-[0_0_10px_blue]'),
 
         // dados daareaAcoeOne
         svgAcoeTitle.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">                         <path stroke-linecap="round" stroke-linejoin="round" d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 0 1 1.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.559.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.894.149c-.424.07-.764.383-.929.78-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 0 1-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.398.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 0 1-.12-1.45l.527-.737c.25-.35.272-.806.108-1.204-.165-.397-.506-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.108-1.204l-.526-.738a1.125 1.125 0 0 1 .12-1.45l.773-.773a1.125 1.125 0 0 1 1.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894Z" /> <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /></svg>'
