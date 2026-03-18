@@ -66,7 +66,7 @@ export default function AppRoutes({ user }: any) {
           }
         />
         <Route
-          path="/Vistoria"
+          path="/vistoria/:id"
           element={
             <ProtectedRoute user={user}>
               <VistoriaPage/>
