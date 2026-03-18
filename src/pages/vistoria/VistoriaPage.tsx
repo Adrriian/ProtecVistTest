@@ -21,7 +21,7 @@ export function VistoriaPage() {
 
   return (
     <div className="p-4">
-
+      <h1 className="text-5xl font-bold text-white">OLA</h1>
       {!abrirCamera ? (
         <ModalGuia
           etapa={etapaAtual}
