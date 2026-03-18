@@ -10,7 +10,7 @@ import ProtectedRoute from "./ProtectedRoute"
 import { DashboardClientes } from "../pages/dashbord-de-clientes/dashbordClientes"
 
 import { atulizarTheme } from "../services/themeLocalStorage"
-import { Vistoria } from "../pages/vistoria/vistoria"
+import { VistoriaPage } from "../pages/vistoria/VistoriaPage"
 
 export default function AppRoutes({ user }: any) {
   atulizarTheme()
@@ -69,7 +69,7 @@ export default function AppRoutes({ user }: any) {
           path="/Vistoria"
           element={
             <ProtectedRoute user={user}>
-              <Vistoria />
+              <VistoriaPage/>
             </ProtectedRoute>
           }
         />
