@@ -1,10 +1,35 @@
 import { collection, deleteDoc, doc, getDocs, query, updateDoc, where } from "firebase/firestore";
 import { auth, db } from "../config/firebase.config";
 import type { VistoriaData } from "../types/list";
+import JSZip from "jszip";
+import { saveAs } from "file-saver";
+
+
+export async function baixarZipFromRender(fotos:any[]) {
+  const zip = new JSZip();
+  const pasta = zip.folder("vistoria");
+
+  for (const foto of fotos) {
+    if (!foto.link) continue;
+
+    if (foto.link.startsWith("data:image")) {
+      const base64Data = foto.link.split(",")[1];
+      pasta?.file(`${foto.label}.png`, base64Data, { base64: true });
+    } else {
+      const response = await fetch(foto.link);
+      const blob = await response.blob();
+      pasta?.file(`${foto.label}.jpg`, blob);
+    }
+  }
+
+  const conteudo = await zip.generateAsync({ type: "blob" });
+  saveAs(conteudo, "vistoria.zip");
+}
 export function navigateToRegister(navigate: any) {
     navigate("/RegisterUser")
 
 }
+
 export function menu() {
     let menuArea = document.querySelector('#bar') as HTMLDivElement
     let bluer = document.querySelector('#bluer') as HTMLDivElement
@@ -206,7 +231,7 @@ export async function dataModal(cliente: any) {
     const baseUrl = window.location.origin;
     const link = `${baseUrl}/vistoria/${cliente.id}`;
 
-   
+
     const dialog = document.querySelector('#modal') as HTMLDialogElement | null
     if (!dialog) return
 
@@ -257,7 +282,7 @@ export async function dataModal(cliente: any) {
     svgTitulo.innerHTML = ' <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" /></svg>'
 
     const h1Titulo = document.createElement('h1')
-    h1Titulo.innerHTML = "Dados do CLiente"
+    h1Titulo.innerHTML = "Dados do Cliente"
 
     dateTitulo.appendChild(svgTitulo)
     dateTitulo.appendChild(h1Titulo)
@@ -280,9 +305,25 @@ export async function dataModal(cliente: any) {
     h1NameClient.innerText = cliente.client
     svgNameClient.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" /></svg>'
 
+
+    //area delete
+    const areaDeleteOne = document.createElement('div')
+    const svgDeleteOne = document.createElement('div')
+
+    //classe
+
+    svgDeleteOne.classList.add('flex', 'gap-2', 'items-center', 'cursor-pointer', 'md:hidden')
+    svgDeleteOne.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" /></svg>'
+
+    areaDeleteOne.appendChild(svgDeleteOne)
+    areaDeleteOne.onclick = () => {
+        handleDeleteClient(cliente.id);
+    };
+
     // MONTANDO ESTRUTURA PLACA E STATUS
     areaClient.appendChild(svgNameClient)
     areaClient.appendChild(h1NameClient)
+    areaClient.appendChild(areaDeleteOne)
 
     //area de status e placa
     const areaPhone = document.createElement('div')
@@ -347,21 +388,20 @@ export async function dataModal(cliente: any) {
         areaStatusColor.classList.add('bg-red-500', 'p-2', 'rounded-xl', 'flex', 'items-center', 'justifu-center', 'gap-2', 'w-30')
     }
 
-    //area delete
+
+    // função
     const areaDelete = document.createElement('div')
     const svgDelete = document.createElement('div')
 
     //classe
     areaDelete.id = 'areaDelete'
-    areaDelete.classList.add('flex', 'gap-2', 'items-center', 'cursor-pointer')
+    areaDelete.classList.add('hidden', 'md:flex', 'gap-2', 'items-center', 'cursor-pointer', 'justify-self-center')
     svgDelete.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" /></svg>'
 
     areaDelete.appendChild(svgDelete)
     areaDelete.onclick = () => {
         handleDeleteClient(cliente.id);
     };
-
-    // função
 
     areaStatusColor.appendChild(svgStatus)
     areaStatusColor.appendChild(h1Status)
@@ -513,13 +553,19 @@ export async function dataModal(cliente: any) {
     const svgAcoeBtn3 = document.createElement('div')
     const h1AcoeBtn3 = document.createElement('h1')
 
+    const areaAcoeBtn4 = document.createElement('div')
+    const svgAcoeBtn4 = document.createElement('div')
+    const h1AcoeBtn4 = document.createElement('h1')
+
     // classes das divs pais
     areaAcoe.classList.add('flex', 'flex-col', 'gap-5', 'p-5',),
         areaAcoeOne.classList.add('flex', 'items-center', 'gap-2'),
-        areaAcoeTwo.classList.add('grid', 'grid-cols-1', 'gap-2', 'sm:flex'),
+        areaAcoeTwo.classList.add('grid', 'grid-cols-1', 'gap-2', 'sm:grid-cols-2', 'md:flex'),
+        areaAcoeBtn.classList.add('flex', 'items-center', 'gap-2,' )
         areaAcoeBtn.classList.add('flex', 'items-center', 'gap-2', 'bg-green-700/50', 'rounded-xl', 'p-2', 'cursor-pointer', 'sm:w-50'),
         areaAcoeBtn2.classList.add('flex', 'items-center', 'gap-2', 'bg-red-600/50', 'rounded-xl', 'p-2', 'cursor-pointer', 'sm:w-50'),
         areaAcoeBtn3.classList.add('flex', 'items-center', 'gap-2', 'bg-gray-600/20', 'rounded-xl', 'p-2', 'cursor-pointer', 'sm:w-50'),
+        areaAcoeBtn4.classList.add('flex', 'items-center', 'gap-2', 'bg-gray-600/20', 'rounded-xl', 'p-2', 'cursor-pointer', 'sm:w-50'),
 
         // dados daareaAcoeOne
         svgAcoeTitle.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">                         <path stroke-linecap="round" stroke-linejoin="round" d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 0 1 1.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.559.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.894.149c-.424.07-.764.383-.929.78-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 0 1-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.398.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 0 1-.12-1.45l.527-.737c.25-.35.272-.806.108-1.204-.165-.397-.506-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.108-1.204l-.526-.738a1.125 1.125 0 0 1 .12-1.45l.773-.773a1.125 1.125 0 0 1 1.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894Z" /> <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /></svg>'
@@ -533,9 +579,16 @@ export async function dataModal(cliente: any) {
 
     svgAcoeBtn3.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" /></svg>'
     h1AcoeBtn3.innerHTML = 'Copiar Link'
- areaAcoeBtn3.onclick = () => {
+    areaAcoeBtn3.onclick = () => {
         navigator.clipboard.writeText(link);
         alert("Link copiado!");
+    };
+
+
+    svgAcoeBtn4.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" /></svg>'
+    h1AcoeBtn4.innerHTML = 'Baixar as Fotos'
+    areaAcoeBtn4.onclick = async () => {
+         await baixarZipFromRender(fotosRender);
     };
     //estrutura divs 
     //titulo
@@ -548,6 +601,8 @@ export async function dataModal(cliente: any) {
     areaAcoeBtn2.appendChild(h1AcoeBtn2)
     areaAcoeBtn3.appendChild(svgAcoeBtn3)
     areaAcoeBtn3.appendChild(h1AcoeBtn3)
+    areaAcoeBtn4.appendChild(svgAcoeBtn4)
+    areaAcoeBtn4.appendChild(h1AcoeBtn4)
 
 
     async function changeStatus() {
@@ -601,6 +656,7 @@ export async function dataModal(cliente: any) {
     areaAcoeTwo.appendChild(areaAcoeBtn)
     areaAcoeTwo.appendChild(areaAcoeBtn2)
     areaAcoeTwo.appendChild(areaAcoeBtn3)
+    areaAcoeTwo.appendChild(areaAcoeBtn4)
 
 
     areaAcoe.appendChild(areaAcoeOne)
