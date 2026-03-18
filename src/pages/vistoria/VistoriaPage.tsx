@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Camera } from "../../components/Camera";
-import { ModalGuia } from "../../components/modalGuia";
+import { ModalGuia } from "../../components/ola";
 import { ModalFinal } from "../../components/ModalFinal";
 import { useVistoria } from "../../hooks/useVistoria";
 
