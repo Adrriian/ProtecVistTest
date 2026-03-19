@@ -53,16 +53,18 @@ export function UserSettings() {
 
 
         {/* LADO DIREITO */}
-        <div className="flex-1 p-8">
-          <div className="flex items-center justify-center">
-            <h1 className="text-2xl font-bold mb-6  text-white">
-              Configurações do Usuário
-            </h1>
-            <div className="bg-white" onClick={navigateToDashbord}>
+        <div className="flex-1 p-8 ">
+
+          <div className="flex items-center justify-center gap-2 mb-5">
+            <div className="bg-white rounded-full p-2 cursor-pointer" onClick={navigateToDashbord}>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6 stroke-violet-700">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
               </svg>
             </div>
+            <h1 className="text-2xl font-bold   text-white">
+              Configurações do Usuário
+            </h1>
+            
           </div>
 
 
