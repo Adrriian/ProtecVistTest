@@ -15,12 +15,12 @@ export function IntroModal({ setEtapa }: any) {
         <div className="flex items-center justify-center gap-20">
           <div>
             <h1 className="text-green-700 font-bold">Correto:</h1>
-            <img className="w-20" src="../../../public/icons/correto.png" alt="correto" />
+            <img className="w-20" src="/icons/correto.png" alt="correto" />
           </div>
 
           <div>
             <h1 className="text-red-700 font-bold">Errado:</h1>
-            <img className="w-20" src="../../../public/icons/errado.png" alt="correto" />
+            <img className="w-20" src="/icons/errado.png" alt="correto" />
           </div>
         </div>
 
