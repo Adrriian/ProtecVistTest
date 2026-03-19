@@ -1,15 +1,21 @@
 
+import { navigateToDashbord } from "../../services/fuctionNavigates";
 import { changePlate, Register } from "../../services/registerFunction";
 import { atulizarTheme } from "../../services/themeLocalStorage";
 
 export function RegisterUser() {
-   atulizarTheme()
+    atulizarTheme()
 
     return (
         <div className="container flex min-h-screen items-center justify-center ">
             <div className="w-4/5 flex flex-col  gap-4 m-4 bg-slate-900 p-7 rounded-2xl max-w-sm">
                 <div className="flex items-center justify-center gap-3">
                     <h1 className="font-bold text-center text-blue-700 dark:text-white text-xl">Gerar Link de Vistoria</h1>
+                    <div className="" onClick={navigateToDashbord}>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
+                        </svg>
+                    </div>
                 </div>
                 <div className="flex flex-col gap-4 justify-center">
                     <div className="flex flex-col  gap-2">
