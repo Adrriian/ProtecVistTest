@@ -1,4 +1,4 @@
-export default function IntroModal({ setEtapa }: any) {
+export function IntroModal({ setEtapa }: any) {
   return (
     <div className="p-5 text-center">
       <h1 className="text-xl font-bold mb-4">Instruções</h1>
