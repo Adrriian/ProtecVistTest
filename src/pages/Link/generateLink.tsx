@@ -1,17 +1,17 @@
-
+import { useNavigate } from "react-router-dom";
 import { navigateToDashbord } from "../../services/fuctionNavigates";
 import { changePlate, Register } from "../../services/registerFunction";
 import { atulizarTheme } from "../../services/themeLocalStorage";
 
 export function RegisterUser() {
     atulizarTheme()
-
+ const navigate = useNavigate()
     return (
         <div className="container flex min-h-screen items-center justify-center ">
             <div className="w-4/5 flex flex-col  gap-4 m-4 bg-slate-900 p-7 rounded-2xl max-w-sm">
             
                 <div className="flex items-center justify-center gap-3">
-                    <div className="bg-white rounded-full p-2 cursor-pointer" onClick={navigateToDashbord}>
+                    <div className="bg-white rounded-full p-2 cursor-pointer" onClick={()=>navigateToDashbord(navigate)}>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6 stroke-violet-700">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
                         </svg>
