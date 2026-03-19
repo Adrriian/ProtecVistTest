@@ -35,69 +35,42 @@ export function CameraComponent() {
     const url = URL.createObjectURL(file);
     setPreview(url);
 
-    // 🔥 aqui você pode salvar a foto pra usar no app
     console.log("Arquivo capturado:", file);
 
     mostrarMensagem("✅ Foto capturada com sucesso!");
-
-    // 🔥 se quiser voltar automaticamente
-    // setTimeout(() => {
-    //   window.history.back();
-    // }, 1500);
   }
 
   return (
-    <div style={styles.container}>
-      <h2>Tirar Foto</h2>
+    <div className="bg-zinc-900 text-white text-center p-5 min-h-screen flex flex-col items-center">
+      <h2 className="text-2xl font-bold mb-5">Tirar Foto</h2>
 
       <input
         ref={inputRef}
         type="file"
         accept="image/*"
         capture="environment"
-        style={{ display: "none" }}
+        className="hidden"
         onChange={handleFileChange}
       />
 
-      <button onClick={abrirCamera} style={styles.button}>
+      <button
+        onClick={abrirCamera}
+        className="px-6 py-4 text-lg rounded-xl bg-green-500 hover:bg-green-600 transition"
+      >
         📸 Abrir Câmera
       </button>
 
-      <p style={styles.mensagem}>{mensagem}</p>
+      <p className="mt-4 font-semibold min-h-[20px]">
+        {mensagem}
+      </p>
 
       {preview && (
-        <img src={preview} alt="preview" style={styles.image} />
+        <img
+          src={preview}
+          alt="preview"
+          className="mt-5 w-full max-w-md rounded-xl"
+        />
       )}
     </div>
   );
 }
-
-const styles = {
-  container: {
-    background: "#111",
-    color: "#fff",
-    textAlign: "center" as const,
-    padding: "20px",
-    minHeight: "100vh",
-  },
-  button: {
-    padding: "15px 25px",
-    fontSize: "18px",
-    borderRadius: "10px",
-    border: "none",
-    background: "#00c853",
-    color: "#fff",
-    cursor: "pointer",
-  },
-  mensagem: {
-    marginTop: "15px",
-    fontWeight: "bold",
-    minHeight: "20px",
-  },
-  image: {
-    marginTop: "20px",
-    width: "100%",
-    maxWidth: "400px",
-    borderRadius: "10px",
-  },
-};
