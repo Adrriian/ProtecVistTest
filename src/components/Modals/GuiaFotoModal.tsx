@@ -5,7 +5,7 @@ import CameraComponent from "../../components/Modals/Camera";
 // 🔥 Arrays de fotos
 const FOTOS_CARRO = [
   "Placa",
-  "frente",
+  "Frente",
   "Frente Lado Direito",
   "Pneu Frente Lado Direito",
   "Farol Frente Lado Direito",
@@ -76,7 +76,7 @@ export function GuiaFotoModals({
 const nomeArquivo = nomeFotoAtual.replace(/\s/g, "-").toLowerCase();
 console.log(nomeArquivo)
 console.log("TIPO:", tipo);
-const caminhoReferencia = `../../../public/fotos/${tipo}/${nomeArquivo}.jpeg`;
+const caminhoReferencia = `process.env.PUBLIC_URL + /fotos/${tipo}/${nomeArquivo}.jpeg`;
   console.log(caminhoReferencia);
 
   function handleCapture(file: File) {
