@@ -4,7 +4,6 @@ import CameraComponent from "../../components/Modals/Camera";
 
 // 🔥 Arrays de fotos
 const FOTOS_CARRO = [
-  "Placa",
   "Frente",
   "Frente Lado Direito",
   "Pneu Dianteiro Direito",
