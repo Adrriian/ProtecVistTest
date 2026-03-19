@@ -1,4 +1,4 @@
-export default function TipoModal({
+export function TipoModal({
   setEtapa,
   setTipoVeiculo,
 }: any) {
