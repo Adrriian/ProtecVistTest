@@ -29,7 +29,7 @@ export default function CameraComponent({ onCapture }: Props) {
 
       <button
         onClick={abrirCamera}
-        className="px-6 py-4 bg-green-500 text-white rounded-xl"
+        className="bg-blue-700 text-white px-4 py-2 rounded hover:px-5 hover:py-3 cursor-pointer hover:bg-violet-700 transition-all duration-300 ease-linear hover:shadow-[0px_0px_10px_blue]  "
       >
         📸 Abrir Câmera
       </button>
