@@ -1,5 +1,5 @@
 
-import { Camera } from "../../components/Camera";
+import { CameraComponent } from "../../components/Camera";
 
 
 export function VistoriaPage() {
@@ -7,7 +7,7 @@ export function VistoriaPage() {
   return (
     <div className="p-4">
 
-      <Camera
+      <CameraComponent
       />
     </div>
   );

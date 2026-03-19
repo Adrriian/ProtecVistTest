@@ -1,61 +1,103 @@
+import { useRef, useState } from "react";
 
+export function CameraComponent() {
+  const inputRef = useRef<HTMLInputElement | null>(null);
 
-export function Camera() {
-  const input: any | null = document.getElementById("cameraInput") as HTMLInputElement;
-  const preview: any | null = document.getElementById("preview") as HTMLImageElement;
-  const mensagem: any | null = document.getElementById("mensagem") as HTMLParagraphElement;
+  const [preview, setPreview] = useState<string | null>(null);
+  const [mensagem, setMensagem] = useState("");
 
   function abrirCamera() {
-    mensagem.innerText = "";
-    input.click();
+    setMensagem("Abrindo câmera...");
+    inputRef.current?.click();
   }
 
-  input.addEventListener("change", function () {
+  function mostrarMensagem(texto: string) {
+    setMensagem(texto);
 
-    const file = input.files[0];
+    setTimeout(() => {
+      setMensagem("");
+    }, 3000);
+  }
 
+  function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
 
     if (!file) {
       mostrarMensagem("❌ Foto cancelada");
       return;
     }
 
+    // limpa memória anterior
+    if (preview) {
+      URL.revokeObjectURL(preview);
+    }
+
     const url = URL.createObjectURL(file);
-    preview.src = url;
-    preview.style.display = "block";
+    setPreview(url);
+
+    // 🔥 aqui você pode salvar a foto pra usar no app
+    console.log("Arquivo capturado:", file);
 
     mostrarMensagem("✅ Foto capturada com sucesso!");
-  });
 
-  function mostrarMensagem(texto: string) {
-    mensagem.innerText = texto;
-
-    setTimeout(() => {
-      mensagem.innerText = "";
-    }, 3000);
+    // 🔥 se quiser voltar automaticamente
+    // setTimeout(() => {
+    //   window.history.back();
+    // }, 1500);
   }
 
   return (
-    <div className="flex flex-col items-center gap-4">
+    <div style={styles.container}>
       <h2>Tirar Foto</h2>
 
-
       <input
+        ref={inputRef}
         type="file"
         accept="image/*"
         capture="environment"
-        id="cameraInput"
-        className="hidden"
+        style={{ display: "none" }}
+        onChange={handleFileChange}
       />
 
+      <button onClick={abrirCamera} style={styles.button}>
+        📸 Abrir Câmera
+      </button>
 
-      <button onClick={abrirCamera}>📸 Abrir Câmera</button>
+      <p style={styles.mensagem}>{mensagem}</p>
 
-
-      <p id="mensagem"></p>
-
-
-      <img id="preview" />
+      {preview && (
+        <img src={preview} alt="preview" style={styles.image} />
+      )}
     </div>
   );
 }
+
+const styles = {
+  container: {
+    background: "#111",
+    color: "#fff",
+    textAlign: "center" as const,
+    padding: "20px",
+    minHeight: "100vh",
+  },
+  button: {
+    padding: "15px 25px",
+    fontSize: "18px",
+    borderRadius: "10px",
+    border: "none",
+    background: "#00c853",
+    color: "#fff",
+    cursor: "pointer",
+  },
+  mensagem: {
+    marginTop: "15px",
+    fontWeight: "bold",
+    minHeight: "20px",
+  },
+  image: {
+    marginTop: "20px",
+    width: "100%",
+    maxWidth: "400px",
+    borderRadius: "10px",
+  },
+};
