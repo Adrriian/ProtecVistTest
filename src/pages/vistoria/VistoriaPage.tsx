@@ -5,7 +5,7 @@ import TipoModal from "../../components/Modals/tipoModal";
 import GuiaFotoModal from "../../components/Modals/GuiaFotoModal";
 import FinalModal from "../../components/Modals/FinalModal";
 
-export default function App() {
+export function VistoriaPage() {
   const vistoria = useVistoria();
 
   return (
