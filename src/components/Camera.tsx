@@ -1,51 +1,59 @@
-import { useEffect, useRef } from "react";
 
-type Props = {
-  onCapture: (img: string) => void;
-};
 
-export function Camera({ onCapture }: Props) {
-  const videoRef = useRef<HTMLVideoElement>(null);
+export function Camera() {
+  const input:any = document.getElementById("cameraInput")  as HTMLInputElement;
+  const preview:any = document.getElementById("preview") as HTMLImageElement;
+  const mensagem:any = document.getElementById("mensagem") as HTMLParagraphElement;
 
-  useEffect(() => {
-    async function start() {
-      const stream = await navigator.mediaDevices.getUserMedia({
-        video: { facingMode: "environment" }
-      });
+  function abrirCamera() {
+    mensagem.innerText = "";
+    input.click();
+  }
 
-      if (videoRef.current) {
-        videoRef.current.srcObject = stream;
-      }
+  input.addEventListener("change", function () {
+    const file = this.files[0];
+
+    if (!file) {
+      mostrarMensagem("❌ Foto cancelada");
+      return;
     }
 
-    start();
-  }, []);
+    const url = URL.createObjectURL(file);
+    preview.src = url;
+    preview.style.display = "block";
 
-  function tirarFoto() {
-    const video = videoRef.current!;
-    const canvas = document.createElement("canvas");
+    mostrarMensagem("✅ Foto capturada com sucesso!");
+  });
 
-    canvas.width = video.videoWidth;
-    canvas.height = video.videoHeight;
+  function mostrarMensagem(texto:string) {
+    mensagem.innerText = texto;
 
-    const ctx = canvas.getContext("2d");
-    ctx?.drawImage(video, 0, 0);
-
-    const img = canvas.toDataURL("image/jpeg");
-
-    onCapture(img);
+    setTimeout(() => {
+      mensagem.innerText = "";
+    }, 3000);
   }
 
   return (
     <div className="flex flex-col items-center gap-4">
-      <video ref={videoRef} autoPlay playsInline className="w-full rounded-xl" />
+      <h2>Tirar Foto</h2>
 
-      <button
-        onClick={tirarFoto}
-        className="bg-blue-500 text-white px-6 py-3 rounded-full"
-      >
-        Tirar foto
-      </button>
+     
+      <input
+        type="file"
+        accept="image/*"
+        capture="environment"
+        id="cameraInput"
+        className="hidden"
+      />
+
+       
+        <button onClick={abrirCamera}>📸 Abrir Câmera</button>
+
+     
+        <p id="mensagem"></p>
+
+  
+        <img id="preview" />
     </div>
   );
 }

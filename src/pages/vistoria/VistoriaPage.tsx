@@ -29,11 +29,6 @@ export function VistoriaPage() {
         />
       ) : (
         <Camera
-          onCapture={(img) => {
-            salvarFoto(img);
-            setAbrirCamera(false);
-            proximo();
-          }}
         />
       )}
 
