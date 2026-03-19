@@ -1,9 +1,9 @@
 
 
 export function Camera() {
-  const input:any = document.getElementById("cameraInput")  as HTMLInputElement;
-  const preview:any = document.getElementById("preview") as HTMLImageElement;
-  const mensagem:any = document.getElementById("mensagem") as HTMLParagraphElement;
+  const input: any | null = document.getElementById("cameraInput") as HTMLInputElement;
+  const preview: any | null = document.getElementById("preview") as HTMLImageElement;
+  const mensagem: any | null = document.getElementById("mensagem") as HTMLParagraphElement;
 
   function abrirCamera() {
     mensagem.innerText = "";
@@ -11,7 +11,9 @@ export function Camera() {
   }
 
   input.addEventListener("change", function () {
-    const file = this.files[0];
+
+    const file = input.files[0];
+
 
     if (!file) {
       mostrarMensagem("❌ Foto cancelada");
@@ -25,7 +27,7 @@ export function Camera() {
     mostrarMensagem("✅ Foto capturada com sucesso!");
   });
 
-  function mostrarMensagem(texto:string) {
+  function mostrarMensagem(texto: string) {
     mensagem.innerText = texto;
 
     setTimeout(() => {
@@ -37,7 +39,7 @@ export function Camera() {
     <div className="flex flex-col items-center gap-4">
       <h2>Tirar Foto</h2>
 
-     
+
       <input
         type="file"
         accept="image/*"
@@ -46,14 +48,14 @@ export function Camera() {
         className="hidden"
       />
 
-       
-        <button onClick={abrirCamera}>📸 Abrir Câmera</button>
 
-     
-        <p id="mensagem"></p>
+      <button onClick={abrirCamera}>📸 Abrir Câmera</button>
 
-  
-        <img id="preview" />
+
+      <p id="mensagem"></p>
+
+
+      <img id="preview" />
     </div>
   );
 }
