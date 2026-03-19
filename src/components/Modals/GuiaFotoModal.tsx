@@ -76,7 +76,7 @@ export function GuiaFotoModals({
 const nomeArquivo = nomeFotoAtual.replace(/\s/g, "-").toLowerCase();
 console.log(nomeArquivo)
 console.log("TIPO:", tipo);
-const caminhoReferencia =`${process.env.PUBLIC_URL} + /fotos/${tipo}/${nomeArquivo}.jpeg`;
+const caminhoReferencia = `${process.env.PUBLIC_URL}/fotos/${tipo}/${nomeArquivo}.jpeg`;
   console.log(caminhoReferencia);
 
   function handleCapture(file: File) {
