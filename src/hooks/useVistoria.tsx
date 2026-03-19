@@ -1,45 +1,38 @@
 import { useState } from "react";
 
-const etapas = [
-  "frente",
-  "frente_lado_direito",
-  "traseira",
-  "motor"
-];
+export type Etapa = "intro" | "tipo" | "guia" | "final";
+
+export type Foto = {
+  file: File;
+  preview: string;
+  nome: string;
+};
 
 export function useVistoria() {
-  const [step, setStep] = useState(0);
+  const [etapa, setEtapa] = useState<Etapa>("intro");
+  const [tipoVeiculo, setTipoVeiculo] = useState<"carro" | "moto" | null>(null);
+  const [tipoVistoria, setTipoVistoria] = useState<string | null>(null);
+  const [fotos, setFotos] = useState<Foto[]>([]);
+  const [fotoAtual, setFotoAtual] = useState(0);
 
-  const [fotos, setFotos] = useState<Record<string, string>>({});
-
-  const etapaAtual = etapas[step];
-
-  function salvarFoto(img: string) {
-    setFotos(prev => ({
-      ...prev,
-      [etapaAtual]: img
-    }));
+  function adicionarFoto(foto: Foto) {
+    setFotos((prev) => [...prev, foto]);
   }
 
-  function proximo() {
-    setStep(prev => prev + 1);
-  }
-
-  function voltar() {
-    setStep(prev => prev - 1);
-  }
-
-  function finalizado() {
-    return step >= etapas.length;
+  function proximaFoto() {
+    setFotoAtual((prev) => prev + 1);
   }
 
   return {
-    step,
-    etapaAtual,
+    etapa,
+    setEtapa,
+    tipoVeiculo,
+    setTipoVeiculo,
+    tipoVistoria,
+    setTipoVistoria,
     fotos,
-    salvarFoto,
-    proximo,
-    voltar,
-    finalizado
+    adicionarFoto,
+    fotoAtual,
+    proximaFoto,
   };
 }
