@@ -15,7 +15,6 @@ export type Foto = {
 };
 
 const FOTOS_CARRO = [
-  "Placa",
   "Frente",
   "Frente Lado Direito",
   "Pneu Frente Lado Direito",
